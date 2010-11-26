@@ -10,7 +10,7 @@
 
 class Command {
 public:
-    virtual static Command* create() = 0;
+    static Command* create();
 private:
 
 };

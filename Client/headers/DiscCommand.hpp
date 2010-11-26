@@ -8,13 +8,15 @@
 #ifndef DISCCOMMAND_HPP
 #define	DISCCOMMAND_HPP
 
+#include <Command.hpp>
+
 class DiscCommand: public Command {
 public:
     DiscCommand();
     DiscCommand(const DiscCommand& orig);
     virtual ~DiscCommand();
 
-    virtual static Command* create();
+    static Command* create();
 private:
 
 };

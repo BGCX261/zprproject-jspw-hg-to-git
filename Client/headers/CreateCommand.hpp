@@ -8,13 +8,15 @@
 #ifndef CREATECOMMAND_HPP
 #define	CREATECOMMAND_HPP
 
+#include <Command.hpp>
+
 class CreateCommand: public Command {
 public:
     CreateCommand();
     CreateCommand(const CreateCommand& orig);
     virtual ~CreateCommand();
 
-    virtual static Command* create();
+    static Command* create();
 private:
 
 };

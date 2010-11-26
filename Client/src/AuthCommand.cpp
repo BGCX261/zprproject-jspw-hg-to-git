@@ -17,6 +17,7 @@ AuthCommand::~AuthCommand() {
 }
 
 Command* AuthCommand::create() {
+    std::cout << "lala" << std::endl;
     return new AuthCommand;
 }
 

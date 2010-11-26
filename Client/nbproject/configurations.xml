@@ -7,8 +7,10 @@
                    kind="SOURCE_LOGICAL_FOLDER">
       <itemPath>headers/AuthCommand.hpp</itemPath>
       <itemPath>headers/Command.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Configuration.hpp</itemPath>
       <itemPath>headers/CreateCommand.hpp</itemPath>
       <itemPath>headers/DiscCommand.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Interpreter.hpp</itemPath>
       <itemPath>headers/SubsCommand.hpp</itemPath>
       <itemPath>headers/UsubCommand.hpp</itemPath>
     </logicalFolder>
@@ -22,8 +24,10 @@
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
       <itemPath>src/AuthCommand.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp</itemPath>
       <itemPath>src/CreateCommand.cpp</itemPath>
       <itemPath>src/DiscCommand.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp</itemPath>
       <itemPath>src/SubsCommand.cpp</itemPath>
       <itemPath>src/UsubCommand.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -53,8 +57,14 @@
           <incDir>
             <pElem>headers</pElem>
             <pElem>src</pElem>
+            <pElem>../../boost</pElem>
           </incDir>
         </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>../../boost-lib</pElem>
+          </linkerAddLib>
+        </linkerTool>
       </compileType>
     </conf>
     <conf name="Release" type="1">

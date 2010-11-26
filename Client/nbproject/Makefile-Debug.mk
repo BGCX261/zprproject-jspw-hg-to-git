@@ -33,12 +33,14 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/1877225195/Interpreter.o \
 	${OBJECTDIR}/src/DiscCommand.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/SubsCommand.o \
 	${OBJECTDIR}/src/CreateCommand.o \
 	${OBJECTDIR}/src/AuthCommand.o \
-	${OBJECTDIR}/src/UsubCommand.o
+	${OBJECTDIR}/src/UsubCommand.o \
+	${OBJECTDIR}/_ext/1877225195/Configuration.o
 
 
 # C Compiler Flags
@@ -55,7 +57,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L../../boost-lib
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -65,35 +67,45 @@ dist/Debug/Cygwin-Windows/client.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/client ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/_ext/1877225195/Interpreter.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Interpreter.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp
+
 ${OBJECTDIR}/src/DiscCommand.o: src/DiscCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iheaders -Isrc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/DiscCommand.o src/DiscCommand.cpp
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/DiscCommand.o src/DiscCommand.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iheaders -Isrc -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/src/SubsCommand.o: src/SubsCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iheaders -Isrc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsCommand.o src/SubsCommand.cpp
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsCommand.o src/SubsCommand.cpp
 
 ${OBJECTDIR}/src/CreateCommand.o: src/CreateCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iheaders -Isrc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CreateCommand.o src/CreateCommand.cpp
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CreateCommand.o src/CreateCommand.cpp
 
 ${OBJECTDIR}/src/AuthCommand.o: src/AuthCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iheaders -Isrc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthCommand.o src/AuthCommand.cpp
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthCommand.o src/AuthCommand.cpp
 
 ${OBJECTDIR}/src/UsubCommand.o: src/UsubCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iheaders -Isrc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubCommand.o src/UsubCommand.cpp
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubCommand.o src/UsubCommand.cpp
+
+${OBJECTDIR}/_ext/1877225195/Configuration.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Configuration.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp
 
 # Subprojects
 .build-subprojects:

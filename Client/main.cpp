@@ -6,6 +6,9 @@
  */
 
 #include <cstdlib>
+#include <Configuration.hpp>
+#include <Interpreter.hpp>
+#include <Command.hpp>
 
 using namespace std;
 
@@ -13,7 +16,10 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-
+    Configuration::config();
+    Interpreter::PInterpreter pi = Interpreter::getInstance();
+    delete (pi->create("auth"));
+    delete (pi->create("subs"));
     return 0;
 }
 

@@ -8,13 +8,16 @@
 #ifndef AUTHCOMMAND_HPP
 #define	AUTHCOMMAND_HPP
 
+#include <Command.hpp>
+#include <iostream>
+
 class AuthCommand: public Command {
 public:
     AuthCommand();
     AuthCommand(const AuthCommand& orig);
     virtual ~AuthCommand();
     
-    virtual static Command* create();
+    static Command* create();
 private:
 
 };

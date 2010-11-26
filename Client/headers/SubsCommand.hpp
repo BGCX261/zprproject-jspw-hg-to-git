@@ -8,13 +8,15 @@
 #ifndef SUBSCOMMAND_HPP
 #define	SUBSCOMMAND_HPP
 
+#include <Command.hpp>
+
 class SubsCommand: public Command {
 public:
     SubsCommand();
     SubsCommand(const SubsCommand& orig);
     virtual ~SubsCommand();
 
-    virtual static Command* create();
+    static Command* create();
 private:
 
 };

@@ -33,12 +33,14 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/1877225195/Interpreter.o \
 	${OBJECTDIR}/src/DiscCommand.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/SubsCommand.o \
 	${OBJECTDIR}/src/CreateCommand.o \
 	${OBJECTDIR}/src/AuthCommand.o \
-	${OBJECTDIR}/src/UsubCommand.o
+	${OBJECTDIR}/src/UsubCommand.o \
+	${OBJECTDIR}/_ext/1877225195/Configuration.o
 
 
 # C Compiler Flags
@@ -64,6 +66,11 @@ LDLIBSOPTIONS=
 dist/Release/Cygwin-Windows/client.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/Cygwin-Windows
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/client ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/_ext/1877225195/Interpreter.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Interpreter.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp
 
 ${OBJECTDIR}/src/DiscCommand.o: src/DiscCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -94,6 +101,11 @@ ${OBJECTDIR}/src/UsubCommand.o: src/UsubCommand.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubCommand.o src/UsubCommand.cpp
+
+${OBJECTDIR}/_ext/1877225195/Configuration.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Configuration.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp
 
 # Subprojects
 .build-subprojects:
