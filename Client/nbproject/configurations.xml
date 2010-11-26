@@ -5,6 +5,12 @@
                    displayName="Header Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>headers/AuthCommand.hpp</itemPath>
+      <itemPath>headers/Command.hpp</itemPath>
+      <itemPath>headers/CreateCommand.hpp</itemPath>
+      <itemPath>headers/DiscCommand.hpp</itemPath>
+      <itemPath>headers/SubsCommand.hpp</itemPath>
+      <itemPath>headers/UsubCommand.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -15,6 +21,11 @@
                    displayName="Source Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>src/AuthCommand.cpp</itemPath>
+      <itemPath>src/CreateCommand.cpp</itemPath>
+      <itemPath>src/DiscCommand.cpp</itemPath>
+      <itemPath>src/SubsCommand.cpp</itemPath>
+      <itemPath>src/UsubCommand.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -38,6 +49,12 @@
         <platform>3</platform>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>headers</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
       </compileType>
     </conf>
     <conf name="Release" type="1">
