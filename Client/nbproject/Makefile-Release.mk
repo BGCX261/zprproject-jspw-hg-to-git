@@ -33,14 +33,19 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/1877225195/Pool.o \
 	${OBJECTDIR}/_ext/1877225195/Interpreter.o \
 	${OBJECTDIR}/src/DiscCommand.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/_ext/1877225195/Terminal.o \
+	${OBJECTDIR}/_ext/1877225195/Application.o \
 	${OBJECTDIR}/src/SubsCommand.o \
 	${OBJECTDIR}/src/CreateCommand.o \
 	${OBJECTDIR}/src/AuthCommand.o \
 	${OBJECTDIR}/src/UsubCommand.o \
-	${OBJECTDIR}/_ext/1877225195/Configuration.o
+	${OBJECTDIR}/_ext/1877225195/Exception.o \
+	${OBJECTDIR}/_ext/1877225195/Configuration.o \
+	${OBJECTDIR}/_ext/1877225195/Thread.o
 
 
 # C Compiler Flags
@@ -67,6 +72,11 @@ dist/Release/Cygwin-Windows/client.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/Cygwin-Windows
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/client ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/_ext/1877225195/Pool.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Pool.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Pool.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Pool.cpp
+
 ${OBJECTDIR}/_ext/1877225195/Interpreter.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
 	${RM} $@.d
@@ -81,6 +91,16 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/_ext/1877225195/Terminal.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Terminal.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Terminal.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Terminal.cpp
+
+${OBJECTDIR}/_ext/1877225195/Application.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Application.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp
 
 ${OBJECTDIR}/src/SubsCommand.o: src/SubsCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -102,10 +122,20 @@ ${OBJECTDIR}/src/UsubCommand.o: src/UsubCommand.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubCommand.o src/UsubCommand.cpp
 
+${OBJECTDIR}/_ext/1877225195/Exception.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Exception.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Exception.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Exception.cpp
+
 ${OBJECTDIR}/_ext/1877225195/Configuration.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Configuration.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp
+
+${OBJECTDIR}/_ext/1877225195/Thread.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Thread.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Thread.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Thread.cpp
 
 # Subprojects
 .build-subprojects:

@@ -8,17 +8,20 @@
 #ifndef SUBSCOMMAND_HPP
 #define	SUBSCOMMAND_HPP
 
-#include <Command.hpp>
+#include "Command.hpp"
 
 class SubsCommand: public Command {
 public:
     SubsCommand();
+    SubsCommand(std::string login, std::string type, int threadId);
     SubsCommand(const SubsCommand& orig);
     virtual ~SubsCommand();
 
-    static Command* create();
+    static PCommand create(const std::vector<std::string>& strs);
 private:
-
+    std::string _login;
+    std::string _type;
+    int _threadId;
 };
 
 #endif	/* SUBSCOMMAND_HPP */

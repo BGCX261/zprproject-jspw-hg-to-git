@@ -13,12 +13,13 @@
 class DiscCommand: public Command {
 public:
     DiscCommand();
+    DiscCommand(int threadId);
     DiscCommand(const DiscCommand& orig);
     virtual ~DiscCommand();
 
-    static Command* create();
+    static PCommand create(const std::vector<std::string>& strs);
 private:
-
+    int _threadId;
 };
 
 #endif	/* DISCCOMMAND_HPP */

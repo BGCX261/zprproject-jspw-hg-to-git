@@ -8,9 +8,16 @@
 #ifndef COMMAND_HPP
 #define	COMMAND_HPP
 
+#include <boost/shared_ptr.hpp>
+#include <string>
+#include <vector>
+
+
+
 class Command {
 public:
-    static Command* create();
+    typedef boost::shared_ptr<Command> PCommand;
+    static PCommand create(const std::vector<std::string>& strs);
 private:
 
 };

@@ -8,18 +8,21 @@
 #ifndef AUTHCOMMAND_HPP
 #define	AUTHCOMMAND_HPP
 
-#include <Command.hpp>
 #include <iostream>
+#include "Command.hpp"
 
 class AuthCommand: public Command {
 public:
     AuthCommand();
+    AuthCommand(std::string login, std::string password, int threadId);
     AuthCommand(const AuthCommand& orig);
     virtual ~AuthCommand();
     
-    static Command* create();
+    static PCommand create(const std::vector<std::string>& strs);
 private:
-
+    std::string _login;
+    std::string _password;
+    int _threadId;
 };
 
 #endif	/* AUTHCOMMAND_HPP */

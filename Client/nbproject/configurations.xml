@@ -5,13 +5,18 @@
                    displayName="Header Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Application.hpp</itemPath>
       <itemPath>headers/AuthCommand.hpp</itemPath>
       <itemPath>headers/Command.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Configuration.hpp</itemPath>
       <itemPath>headers/CreateCommand.hpp</itemPath>
       <itemPath>headers/DiscCommand.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Exception.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Interpreter.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Pool.hpp</itemPath>
       <itemPath>headers/SubsCommand.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Terminal.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Thread.hpp</itemPath>
       <itemPath>headers/UsubCommand.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -23,12 +28,17 @@
                    displayName="Source Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp</itemPath>
       <itemPath>src/AuthCommand.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp</itemPath>
       <itemPath>src/CreateCommand.cpp</itemPath>
       <itemPath>src/DiscCommand.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Exception.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Pool.cpp</itemPath>
       <itemPath>src/SubsCommand.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Terminal.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Thread.cpp</itemPath>
       <itemPath>src/UsubCommand.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>

@@ -15,21 +15,25 @@
 
 class Interpreter {
 public:
-    typedef Command* (*NewCmdFun)();
+    typedef Command::PCommand (*NewCmdFun)(const std::vector<std::string>&);
     typedef boost::shared_ptr<Interpreter> PInterpreter;
 
     static PInterpreter getInstance();
-      
     bool registerCmd(const std::string& key, NewCmdFun fun);
-    Command* create (const std::string& key);
+    Command::PCommand create(const std::string& key, const std::vector<std::string>& strs);
+    Command::PCommand create(const std::vector<std::string>& strs);
 
+    ~Interpreter();
+    
 private:
-    Interpreter();
-    Interpreter(const Interpreter& orig);
+    typedef std::map<std::string, NewCmdFun> Callbacks;
+    
+    Callbacks _callbacks;
     static PInterpreter _pInstance;
 
-    typedef std::map<std::string, NewCmdFun> Callbacks;
-    Callbacks _callbacks;
+    Interpreter();
+    Interpreter(const Interpreter& orig);
+    Callbacks::const_iterator find(const std::string& key);
 };
 
 #endif	/* CMDFACTORY_HPP */

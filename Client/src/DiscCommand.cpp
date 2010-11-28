@@ -6,8 +6,13 @@
  */
 
 #include "DiscCommand.hpp"
+#include <boost/lexical_cast.hpp>
 
 DiscCommand::DiscCommand() {
+}
+
+DiscCommand::DiscCommand(int threadId) : 
+    _threadId(threadId) {
 }
 
 DiscCommand::DiscCommand(const DiscCommand& orig) {
@@ -16,6 +21,8 @@ DiscCommand::DiscCommand(const DiscCommand& orig) {
 DiscCommand::~DiscCommand() {
 }
 
-Command* DiscCommand::create() {
-    return new DiscCommand;
+DiscCommand::PCommand DiscCommand::create(const std::vector<std::string>& strs) {
+    if (strs.size() != 1)
+        throw new std::exception();
+    return PCommand(new DiscCommand(boost::lexical_cast<int>(strs[0])));
 }
