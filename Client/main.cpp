@@ -18,7 +18,7 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    std::string str;
+    /*std::string str;
     std::getline(std::cin, str);
     boost::trim(str);
     std::vector<std::string> strs;
@@ -27,11 +27,12 @@ int main(int argc, char** argv) {
     copy.erase(copy.begin());
     for (int i = 0; i < copy.size(); ++i)
         std::cout << copy[i] << std::endl;
-    /*
+     */
+    
     Configuration::config();
     Application app;
     app.run();
-    */
+    
     return 0;
 }
 

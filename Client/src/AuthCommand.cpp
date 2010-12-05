@@ -6,18 +6,16 @@
  */
 
 #include "AuthCommand.hpp"
+#include "Visitor.hpp"
 #include <boost/lexical_cast.hpp>
 
-AuthCommand::AuthCommand() {
-
-}
-
 AuthCommand::AuthCommand(std::string login, std::string password, int threadId) :
-    _login(login), _password(password), _threadId(threadId) {
+    CommandThread(threadId), _login(login), _password(password) {
     
 }
 
-AuthCommand::AuthCommand(const AuthCommand& orig) {
+AuthCommand::AuthCommand(const AuthCommand& orig) :
+    CommandThread(orig), _login(orig._login), _password(orig._password) {
 }
 
 AuthCommand::~AuthCommand() {
@@ -29,3 +27,14 @@ AuthCommand::PCommand AuthCommand::create(const std::vector<std::string>& strs) 
     return PCommand(new AuthCommand(strs[1], strs[2], boost::lexical_cast<int>(strs[0])));
 }
 
+void AuthCommand::accept(const Visitor& visitor) const {
+    visitor.handle(*this);
+}
+
+std::string AuthCommand::getLogin() const {
+    return _login;
+}
+
+std::string AuthCommand::getPasswd() const {
+    return _password;
+}

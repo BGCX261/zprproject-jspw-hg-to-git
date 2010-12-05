@@ -9,17 +9,17 @@
 #define	CREATECOMMAND_HPP
 
 #include "Command.hpp"
+#include "CommandThread.hpp"
 
-class CreateCommand: public Command {
+class CreateCommand: public Command, public CommandThread {
 public:
-    CreateCommand();
     CreateCommand(int threadId);
     CreateCommand(const CreateCommand& orig);
     virtual ~CreateCommand();
 
     static PCommand create(const std::vector<std::string>& strs);
+    virtual void accept(const Visitor& visitor) const;
 private:
-    int _threadId;
 };
 
 #endif	/* CREATECOMMAND_HPP */

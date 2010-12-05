@@ -2,39 +2,36 @@
  * File:   Interpreter.hpp
  * Author: Pawel
  *
- * Created on 26 listopad 2010, 20:41
+ * Created on 30 listopad 2010, 15:50
  */
 
 #ifndef INTERPRETER_HPP
 #define	INTERPRETER_HPP
 
-#include <string>
-#include <map>
 #include <boost/shared_ptr.hpp>
+#include "Visitor.hpp"
 #include "Command.hpp"
 
-class Interpreter {
+
+class Interpreter : public Visitor {
 public:
-    typedef Command::PCommand (*NewCmdFun)(const std::vector<std::string>&);
     typedef boost::shared_ptr<Interpreter> PInterpreter;
 
     static PInterpreter getInstance();
-    bool registerCmd(const std::string& key, NewCmdFun fun);
-    Command::PCommand create(const std::string& key, const std::vector<std::string>& strs);
-    Command::PCommand create(const std::vector<std::string>& strs);
+    virtual ~Interpreter();
 
-    ~Interpreter();
-    
+    void handle(const AuthCommand& authCmd) const;
+    void handle(const CreateCommand& createCmd) const;
+    void handle(const DiscCommand& discCmd) const;
+    void handle(const SubsCommand& subsCmd) const;
+    void handle(const UsubCommand& usubCmd) const;
+    void interpret(const Command& cmd);
+
 private:
-    typedef std::map<std::string, NewCmdFun> Callbacks;
-    
-    Callbacks _callbacks;
     static PInterpreter _pInstance;
 
     Interpreter();
-    Interpreter(const Interpreter& orig);
-    Callbacks::const_iterator find(const std::string& key);
 };
 
-#endif	/* CMDFACTORY_HPP */
+#endif	/* INTERPRETER_HPP */
 

@@ -8,18 +8,18 @@
 #ifndef DISCCOMMAND_HPP
 #define	DISCCOMMAND_HPP
 
-#include <Command.hpp>
+#include "Command.hpp"
+#include "CommandThread.hpp"
 
-class DiscCommand: public Command {
+class DiscCommand: public Command, public CommandThread {
 public:
-    DiscCommand();
     DiscCommand(int threadId);
     DiscCommand(const DiscCommand& orig);
     virtual ~DiscCommand();
 
     static PCommand create(const std::vector<std::string>& strs);
+    virtual void accept(const Visitor& visitor) const;
 private:
-    int _threadId;
 };
 
 #endif	/* DISCCOMMAND_HPP */

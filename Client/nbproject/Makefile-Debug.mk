@@ -38,13 +38,19 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/DiscCommand.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/_ext/1877225195/Terminal.o \
-	${OBJECTDIR}/_ext/1877225195/Application.o \
-	${OBJECTDIR}/src/SubsCommand.o \
+	${OBJECTDIR}/_ext/1877225195/CmdFactory.o \
 	${OBJECTDIR}/src/CreateCommand.o \
+	${OBJECTDIR}/src/SubsCommand.o \
+	${OBJECTDIR}/_ext/1877225195/Application.o \
 	${OBJECTDIR}/src/AuthCommand.o \
 	${OBJECTDIR}/src/UsubCommand.o \
 	${OBJECTDIR}/_ext/1877225195/Exception.o \
+	${OBJECTDIR}/src/ConditionVariable.o \
 	${OBJECTDIR}/_ext/1877225195/Configuration.o \
+	${OBJECTDIR}/_ext/1877225195/Queue.o \
+	${OBJECTDIR}/_ext/1877225195/CommandThread.o \
+	${OBJECTDIR}/src/Command.o \
+	${OBJECTDIR}/src/Visitor.o \
 	${OBJECTDIR}/_ext/1877225195/Thread.o
 
 
@@ -62,11 +68,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../boost-lib
+LDLIBSOPTIONS=-L../../boost-lib ../../boost_lib/cygboost_thread-mt-1_43.dll
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-Debug.mk dist/Debug/Cygwin-Windows/client.exe
+
+dist/Debug/Cygwin-Windows/client.exe: ../../boost_lib/cygboost_thread-mt-1_43.dll
 
 dist/Debug/Cygwin-Windows/client.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
@@ -97,20 +105,25 @@ ${OBJECTDIR}/_ext/1877225195/Terminal.o: /cygdrive/G/Programowanie/ProjektyStudi
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Terminal.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Terminal.cpp
 
-${OBJECTDIR}/_ext/1877225195/Application.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp 
+${OBJECTDIR}/_ext/1877225195/CmdFactory.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CmdFactory.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Application.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/CmdFactory.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CmdFactory.cpp
+
+${OBJECTDIR}/src/CreateCommand.o: src/CreateCommand.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CreateCommand.o src/CreateCommand.cpp
 
 ${OBJECTDIR}/src/SubsCommand.o: src/SubsCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsCommand.o src/SubsCommand.cpp
 
-${OBJECTDIR}/src/CreateCommand.o: src/CreateCommand.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
+${OBJECTDIR}/_ext/1877225195/Application.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CreateCommand.o src/CreateCommand.cpp
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Application.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp
 
 ${OBJECTDIR}/src/AuthCommand.o: src/AuthCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -127,10 +140,35 @@ ${OBJECTDIR}/_ext/1877225195/Exception.o: /cygdrive/G/Programowanie/ProjektyStud
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Exception.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Exception.cpp
 
+${OBJECTDIR}/src/ConditionVariable.o: src/ConditionVariable.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/ConditionVariable.o src/ConditionVariable.cpp
+
 ${OBJECTDIR}/_ext/1877225195/Configuration.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Configuration.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp
+
+${OBJECTDIR}/_ext/1877225195/Queue.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Queue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Queue.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Queue.cpp
+
+${OBJECTDIR}/_ext/1877225195/CommandThread.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CommandThread.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/CommandThread.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CommandThread.cpp
+
+${OBJECTDIR}/src/Command.o: src/Command.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Command.o src/Command.cpp
+
+${OBJECTDIR}/src/Visitor.o: src/Visitor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iheaders -Isrc -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Visitor.o src/Visitor.cpp
 
 ${OBJECTDIR}/_ext/1877225195/Thread.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Thread.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195

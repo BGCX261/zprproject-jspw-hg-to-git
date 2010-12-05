@@ -2,21 +2,18 @@
  * File:   Interpreter.cpp
  * Author: Pawel
  * 
- * Created on 26 listopad 2010, 20:41
+ * Created on 30 listopad 2010, 15:50
  */
 
 #include "Interpreter.hpp"
+#include "Pool.hpp"
 
 Interpreter::PInterpreter Interpreter::_pInstance;
 
 Interpreter::Interpreter() {
 }
 
-Interpreter::Interpreter(const Interpreter& orig) {
-}
-
 Interpreter::~Interpreter() {
-    
 }
 
 Interpreter::PInterpreter Interpreter::getInstance() {
@@ -25,24 +22,27 @@ Interpreter::PInterpreter Interpreter::getInstance() {
     return _pInstance;
 }
 
-Command::PCommand Interpreter::create(const std::string& key, const std::vector<std::string>& strs) {
-    return (find(key)->second)(strs);
+void Interpreter::handle(const AuthCommand& authCmd) const {
+    Pool::getInstance()->passCmd(authCmd.getId(), authCmd);
 }
 
-Command::PCommand Interpreter::create(const std::vector<std::string>& strs) {
-    std::vector<std::string> copy(strs);
-    copy.erase(copy.begin());
-    return (find(strs[0])->second)(strs);
+void Interpreter::handle(const CreateCommand& createCmd) const {
+    Pool::getInstance()->createThread(createCmd.getId());
 }
 
-bool Interpreter::registerCmd(const std::string& key, NewCmdFun fun) {
-    _callbacks.insert(std::make_pair(key, fun));
+void Interpreter::handle(const DiscCommand& discCmd) const {
+    Pool::getInstance()->passCmd(discCmd.getId(), discCmd);
 }
 
-Interpreter::Callbacks::const_iterator Interpreter::find(const std::string& key) {
-    Callbacks::const_iterator i = _callbacks.find(key);
-    if(i == _callbacks.end())
-        throw new std::exception();
-    else
-        return i;
+void Interpreter::handle(const SubsCommand& subsCmd) const {
+    Pool::getInstance()->passCmd(subsCmd.getId(), subsCmd);
 }
+
+void Interpreter::handle(const UsubCommand& usubCmd) const {
+    Pool::getInstance()->passCmd(usubCmd.getId(), usubCmd);
+}
+
+void Interpreter::interpret(const Command& cmd) {
+    cmd.accept(*this);
+}
+

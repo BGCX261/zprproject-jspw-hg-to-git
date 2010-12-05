@@ -12,14 +12,16 @@
 #include <string>
 #include <vector>
 
-
+class Visitor;
 
 class Command {
 public:
     typedef boost::shared_ptr<Command> PCommand;
     static PCommand create(const std::vector<std::string>& strs);
-private:
 
+    virtual void accept(const Visitor& visitor) const = 0;
+protected:
+    Command();
 };
 
 #endif	/* COMMAND_HPP */

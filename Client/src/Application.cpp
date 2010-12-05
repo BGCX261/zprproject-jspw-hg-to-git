@@ -6,17 +6,24 @@
  */
 
 #include "Application.hpp"
+#include "CmdFactory.hpp"
 #include "Interpreter.hpp"
 #include "Terminal.hpp"
+#include "Command.hpp"
+#include "Pool.hpp"
 
+#include <iostream>
 Application::Application() {
     
 }
 
 void Application::run() {
     Terminal::PTerminal terminal = Terminal::getInstance();
+    Command::PCommand command;
+    Interpreter::PInterpreter interpreter = Interpreter::getInstance();
     while(1) {
-        terminal->readCmd();
+        command = terminal->readCmd();
+        interpreter->interpret(*command);
     }
     
 }

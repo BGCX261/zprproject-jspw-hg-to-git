@@ -7,17 +7,22 @@
                    kind="SOURCE_LOGICAL_FOLDER">
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Application.hpp</itemPath>
       <itemPath>headers/AuthCommand.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/CmdFactory.hpp</itemPath>
       <itemPath>headers/Command.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/CommandThread.hpp</itemPath>
+      <itemPath>headers/ConditionVariable.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Configuration.hpp</itemPath>
       <itemPath>headers/CreateCommand.hpp</itemPath>
       <itemPath>headers/DiscCommand.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Exception.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Interpreter.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Pool.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Queue.hpp</itemPath>
       <itemPath>headers/SubsCommand.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Terminal.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Thread.hpp</itemPath>
       <itemPath>headers/UsubCommand.hpp</itemPath>
+      <itemPath>headers/Visitor.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -30,16 +35,22 @@
                    kind="SOURCE_LOGICAL_FOLDER">
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp</itemPath>
       <itemPath>src/AuthCommand.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CmdFactory.cpp</itemPath>
+      <itemPath>src/Command.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CommandThread.cpp</itemPath>
+      <itemPath>src/ConditionVariable.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp</itemPath>
       <itemPath>src/CreateCommand.cpp</itemPath>
       <itemPath>src/DiscCommand.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Exception.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Pool.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Queue.cpp</itemPath>
       <itemPath>src/SubsCommand.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Terminal.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Thread.cpp</itemPath>
       <itemPath>src/UsubCommand.cpp</itemPath>
+      <itemPath>src/Visitor.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -74,6 +85,9 @@
           <linkerAddLib>
             <pElem>../../boost-lib</pElem>
           </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibFileItem>../../boost_lib/cygboost_thread-mt-1_43.dll</linkerLibFileItem>
+          </linkerLibItems>
         </linkerTool>
       </compileType>
     </conf>

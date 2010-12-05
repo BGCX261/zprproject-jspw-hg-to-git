@@ -6,17 +6,16 @@
  */
 
 #include "CreateCommand.hpp"
+#include "Visitor.hpp"
 #include <boost/lexical_cast.hpp>
 
-CreateCommand::CreateCommand() {
-}
-
 CreateCommand::CreateCommand(int threadId) :
-    _threadId(threadId) {
+    CommandThread(threadId) {
     
 }
 
-CreateCommand::CreateCommand(const CreateCommand& orig) {
+CreateCommand::CreateCommand(const CreateCommand& orig) :
+    CommandThread(orig) {
 }
 
 CreateCommand::~CreateCommand() {
@@ -26,4 +25,8 @@ CreateCommand::PCommand CreateCommand::create(const std::vector<std::string>& st
     if (strs.size() != 1)
         throw new std::exception();
     return PCommand(new CreateCommand(boost::lexical_cast<int>(strs[0])));
+}
+
+void CreateCommand::accept(const Visitor& visitor) const {
+    visitor.handle(*this);
 }

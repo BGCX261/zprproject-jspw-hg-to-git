@@ -6,7 +6,7 @@
  */
 
 #include "Configuration.hpp"
-#include "Interpreter.hpp"
+#include "CmdFactory.hpp"
 #include "CreateCommand.hpp"
 #include "AuthCommand.hpp"
 #include "DiscCommand.hpp"
@@ -14,15 +14,15 @@
 #include "UsubCommand.hpp"
 
 void Configuration::config() {
-    registerCmd();
+    registerCmds();
 }
 
-void Configuration::registerCmd() {
-    Interpreter::PInterpreter interpreter = Interpreter::getInstance();
-    interpreter->registerCmd("create", CreateCommand::create);
-    interpreter->registerCmd("auth", AuthCommand::create);
-    interpreter->registerCmd("disconnect", DiscCommand::create);
-    interpreter->registerCmd("subs", SubsCommand::create);
-    interpreter->registerCmd("unsub", UsubCommand::create);
+void Configuration::registerCmds() {
+    CmdFactory::PCmdFactory cmdFactory = CmdFactory::getInstance();
+    cmdFactory->registerCmd("create", CreateCommand::create);
+    cmdFactory->registerCmd("auth", AuthCommand::create);
+    cmdFactory->registerCmd("disconnect", DiscCommand::create);
+    cmdFactory->registerCmd("subs", SubsCommand::create);
+    cmdFactory->registerCmd("unsub", UsubCommand::create);
 }
 

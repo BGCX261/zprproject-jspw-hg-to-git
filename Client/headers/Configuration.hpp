@@ -12,7 +12,7 @@ class Configuration {
 public:
     static void config();
 private:
-    static void registerCmd();
+    static void registerCmds();
 };
 
 #endif	/* CONFIGURATION_HPP */
