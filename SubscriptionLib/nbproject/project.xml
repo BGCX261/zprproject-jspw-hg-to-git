@@ -6,15 +6,18 @@
             <name>SubscriptionLib</name>
             <make-project-type>0</make-project-type>
             <c-extensions/>
-            <cpp-extensions/>
-            <header-extensions/>
+            <cpp-extensions>cpp</cpp-extensions>
+            <header-extensions>hpp</header-extensions>
+            <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList/>
+            <sourceRootList>
+                <sourceRootElem>src</sourceRootElem>
+                <sourceRootElem>headers</sourceRootElem>
+            </sourceRootList>
             <confList>
                 <confElem>Debug</confElem>
                 <confElem>Release</confElem>
             </confList>
-            <sourceEncoding>UTF-8</sourceEncoding>
         </data>
     </configuration>
 </project>

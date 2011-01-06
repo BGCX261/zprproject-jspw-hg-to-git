@@ -5,6 +5,19 @@
                    displayName="Header Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>headers/AuthResponse.hpp</itemPath>
+      <itemPath>headers/Library.hpp</itemPath>
+      <itemPath>headers/MsgResponse.hpp</itemPath>
+      <itemPath>headers/Serializeable.hpp</itemPath>
+      <itemPath>headers/SubsResponse.hpp</itemPath>
+      <itemPath>headers/UsubResponse.hpp</itemPath>
+      <itemPath>headers/authRequest.hpp</itemPath>
+      <itemPath>headers/message.hpp</itemPath>
+      <itemPath>headers/newMsgRequestr.hpp</itemPath>
+      <itemPath>headers/request.hpp</itemPath>
+      <itemPath>headers/response.hpp</itemPath>
+      <itemPath>headers/subsRequest.hpp</itemPath>
+      <itemPath>headers/usubRequest.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -15,6 +28,19 @@
                    displayName="Source Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>src/AuthRequest.cpp</itemPath>
+      <itemPath>src/AuthResponse.cpp</itemPath>
+      <itemPath>src/Library.cpp</itemPath>
+      <itemPath>src/Message.cpp</itemPath>
+      <itemPath>src/MsgResponse.cpp</itemPath>
+      <itemPath>src/NewMsgRequestr.cpp</itemPath>
+      <itemPath>src/Request.cpp</itemPath>
+      <itemPath>src/Response.cpp</itemPath>
+      <itemPath>src/Serializeable.cpp</itemPath>
+      <itemPath>src/SubsRequest.cpp</itemPath>
+      <itemPath>src/SubsResponse.cpp</itemPath>
+      <itemPath>src/UsubRequest.cpp</itemPath>
+      <itemPath>src/UsubResponse.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -28,6 +54,10 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>src</Elem>
+    <Elem>headers</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="3">
@@ -37,6 +67,12 @@
         <platform>3</platform>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>headers</pElem>
+          </incDir>
+        </ccTool>
         <archiverTool>
         </archiverTool>
       </compileType>
