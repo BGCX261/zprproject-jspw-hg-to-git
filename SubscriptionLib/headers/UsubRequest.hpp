@@ -8,13 +8,20 @@
 #ifndef USUBREQUEST_HPP
 #define	USUBREQUEST_HPP
 
-class UsubRequest {
+#include "Request.hpp"
+
+class UsubRequest: public Request, public RegisterSerializeable<UsubRequest, Request> {
 public:
     UsubRequest();
+    UsubRequest(const std::string& login, const std::string& subId);
     UsubRequest(const UsubRequest& orig);
-    virtual ~UsubRequest();
+    std::string getSubId() const;
+protected:
+    virtual std::string id() const;
+    virtual bool doSerialize(Archive& archive) const;
+    virtual bool doDeserialize(Archive& archive);
 private:
-
+    std::string _subId;
 };
 
 #endif	/* USUBREQUEST_HPP */

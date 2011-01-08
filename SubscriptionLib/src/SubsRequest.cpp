@@ -6,13 +6,30 @@
  */
 
 #include "SubsRequest.hpp"
+#include "Id.hpp"
 
 SubsRequest::SubsRequest() {
 }
 
-SubsRequest::SubsRequest(const SubsRequest& orig) {
+SubsRequest::SubsRequest(const std::string& login, const std::string& subId) :
+    Request(login), _subId(subId) {
 }
 
-SubsRequest::~SubsRequest() {
+SubsRequest::SubsRequest(const SubsRequest& orig) :
+    Request(orig), _subId(orig._subId) {
+}
+
+std::string SubsRequest::id() const {
+    return ClassId<SubsRequest>::id();
+}
+
+bool SubsRequest::doSerialize(Archive& archive) const {
+    Request::doSerialize(archive);
+    archive << _subId;
+}
+
+bool SubsRequest::doDeserialize(Archive& archive) {
+    Request::doDeserialize(archive);
+    archive >> _subId;
 }
 

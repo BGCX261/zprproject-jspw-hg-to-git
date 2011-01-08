@@ -8,13 +8,23 @@
 #ifndef RESPONSE_HPP
 #define	RESPONSE_HPP
 
-class Response {
-public:
-    Response();
-    Response(const Response& orig);
-    virtual ~Response();
-private:
+#include "Message.hpp"
+#include "Serializeable.hpp"
 
+class Response: public Message, public Serializeable<Response> {
+public:
+    int getStatus() const;
+    std::string getAnswer() const;
+protected:
+    Response();
+    Response(const int& status, const std::string& answer);
+    Response(const Response& orig);
+
+    virtual bool doSerialize(Archive& archive) const;
+    virtual bool doDeserialize(Archive& archive);
+
+    int _status;
+    std::string _answer;
 };
 
 #endif	/* RESPONSE_HPP */

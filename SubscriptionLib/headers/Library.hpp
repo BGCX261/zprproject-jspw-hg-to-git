@@ -14,8 +14,6 @@
 class Library {
 public:
     Library();
-    Library(const Library& orig);
-    virtual ~Library();
 
     bool read();
     bool write(const Request& request);

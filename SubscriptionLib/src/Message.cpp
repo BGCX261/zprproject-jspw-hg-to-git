@@ -10,9 +10,4 @@
 Message::Message() {
 }
 
-Message::Message(const Message& orig) {
-}
-
-Message::~Message() {
-}
 

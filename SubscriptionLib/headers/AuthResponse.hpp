@@ -8,13 +8,17 @@
 #ifndef AUTHRESPONSE_HPP
 #define	AUTHRESPONSE_HPP
 
-class AuthResponse {
+#include "Response.hpp"
+
+class AuthResponse: public Response, public RegisterSerializeable<AuthResponse, Response>  {
 public:
     AuthResponse();
+    AuthResponse(const int& status, const std::string& answer);
     AuthResponse(const AuthResponse& orig);
-    virtual ~AuthResponse();
-private:
-
+protected:
+    virtual std::string id() const;
+    virtual bool doSerialize(Archive& archive) const;
+    virtual bool doDeserialize(Archive& archive);
 };
 
 #endif	/* AUTHRESPONSE_HPP */

@@ -8,13 +8,17 @@
 #ifndef USUBRESPONSE_HPP
 #define	USUBRESPONSE_HPP
 
-class UsubResponse {
+#include "Response.hpp"
+
+class UsubResponse: public Response, public RegisterSerializeable<UsubResponse, Response> {
 public:
     UsubResponse();
+    UsubResponse(const int& status, const std::string& answer);
     UsubResponse(const UsubResponse& orig);
-    virtual ~UsubResponse();
-private:
-
+protected:
+    virtual std::string id() const;
+    virtual bool doSerialize(Archive& archive) const;
+    virtual bool doDeserialize(Archive& archive);
 };
 
 #endif	/* USUBRESPONSE_HPP */

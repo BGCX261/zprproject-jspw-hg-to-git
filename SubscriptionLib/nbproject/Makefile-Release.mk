@@ -33,18 +33,22 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/AuthResponse.o \
 	${OBJECTDIR}/src/Response.o \
+	${OBJECTDIR}/src/AuthResponse.o \
 	${OBJECTDIR}/src/Request.o \
-	${OBJECTDIR}/src/Serializeable.o \
-	${OBJECTDIR}/src/NewMsgRequestr.o \
-	${OBJECTDIR}/src/AuthRequest.o \
+	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/Archive.o \
+	${OBJECTDIR}/src/NewMsgResponse.o \
 	${OBJECTDIR}/src/SubsRequest.o \
+	${OBJECTDIR}/src/AuthRequest.o \
 	${OBJECTDIR}/src/UsubRequest.o \
 	${OBJECTDIR}/src/Message.o \
+	${OBJECTDIR}/src/StringArchive.o \
 	${OBJECTDIR}/src/UsubResponse.o \
 	${OBJECTDIR}/src/Library.o \
 	${OBJECTDIR}/src/SubsResponse.o \
+	${OBJECTDIR}/src/Exception.o \
+	${OBJECTDIR}/src/NewMsgRequest.o \
 	${OBJECTDIR}/src/MsgResponse.o
 
 
@@ -74,40 +78,45 @@ dist/Release/Cygwin-Windows/libsubscriptionlib.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsubscriptionlib.a ${OBJECTFILES} 
 	$(RANLIB) dist/Release/Cygwin-Windows/libsubscriptionlib.a
 
-${OBJECTDIR}/src/AuthResponse.o: src/AuthResponse.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthResponse.o src/AuthResponse.cpp
-
 ${OBJECTDIR}/src/Response.o: src/Response.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Response.o src/Response.cpp
+
+${OBJECTDIR}/src/AuthResponse.o: src/AuthResponse.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthResponse.o src/AuthResponse.cpp
 
 ${OBJECTDIR}/src/Request.o: src/Request.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Request.o src/Request.cpp
 
-${OBJECTDIR}/src/Serializeable.o: src/Serializeable.cpp 
+${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Serializeable.o src/Serializeable.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
 
-${OBJECTDIR}/src/NewMsgRequestr.o: src/NewMsgRequestr.cpp 
+${OBJECTDIR}/src/Archive.o: src/Archive.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgRequestr.o src/NewMsgRequestr.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Archive.o src/Archive.cpp
 
-${OBJECTDIR}/src/AuthRequest.o: src/AuthRequest.cpp 
+${OBJECTDIR}/src/NewMsgResponse.o: src/NewMsgResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthRequest.o src/AuthRequest.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgResponse.o src/NewMsgResponse.cpp
 
 ${OBJECTDIR}/src/SubsRequest.o: src/SubsRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsRequest.o src/SubsRequest.cpp
+
+${OBJECTDIR}/src/AuthRequest.o: src/AuthRequest.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthRequest.o src/AuthRequest.cpp
 
 ${OBJECTDIR}/src/UsubRequest.o: src/UsubRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -118,6 +127,11 @@ ${OBJECTDIR}/src/Message.o: src/Message.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Message.o src/Message.cpp
+
+${OBJECTDIR}/src/StringArchive.o: src/StringArchive.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/StringArchive.o src/StringArchive.cpp
 
 ${OBJECTDIR}/src/UsubResponse.o: src/UsubResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -133,6 +147,16 @@ ${OBJECTDIR}/src/SubsResponse.o: src/SubsResponse.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsResponse.o src/SubsResponse.cpp
+
+${OBJECTDIR}/src/Exception.o: src/Exception.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Exception.o src/Exception.cpp
+
+${OBJECTDIR}/src/NewMsgRequest.o: src/NewMsgRequest.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgRequest.o src/NewMsgRequest.cpp
 
 ${OBJECTDIR}/src/MsgResponse.o: src/MsgResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

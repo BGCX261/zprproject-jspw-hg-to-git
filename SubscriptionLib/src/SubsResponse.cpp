@@ -6,13 +6,28 @@
  */
 
 #include "SubsResponse.hpp"
+#include "Id.hpp"
 
 SubsResponse::SubsResponse() {
 }
 
-SubsResponse::SubsResponse(const SubsResponse& orig) {
+SubsResponse::SubsResponse(const int& status, const std::string& answer) :
+    Response(status, answer) {
 }
 
-SubsResponse::~SubsResponse() {
+SubsResponse::SubsResponse(const SubsResponse& orig) :
+    Response(orig) {
+}
+
+std::string SubsResponse::id() const {
+    return ClassId<SubsResponse>::id();
+}
+
+bool SubsResponse::doSerialize(Archive& archive) const {
+    Response::doSerialize(archive);
+}
+
+bool SubsResponse::doDeserialize(Archive& archive) {
+    Response::doDeserialize(archive);
 }
 

@@ -10,9 +10,4 @@
 Library::Library() {
 }
 
-Library::Library(const Library& orig) {
-}
-
-Library::~Library() {
-}
 

@@ -6,13 +6,29 @@
  */
 
 #include "MsgResponse.hpp"
+#include "Id.hpp"
 
 MsgResponse::MsgResponse() {
 }
 
-MsgResponse::MsgResponse(const MsgResponse& orig) {
+MsgResponse::MsgResponse(const int& status, const std::string& answer, const std::string& info) :
+    Response(status, answer), _info(info) {
 }
 
-MsgResponse::~MsgResponse() {
+MsgResponse::MsgResponse(const MsgResponse& orig) :
+    Response(orig), _info(orig._info) {
 }
 
+std::string MsgResponse::id() const {
+    return ClassId<MsgResponse>::id();
+}
+
+bool MsgResponse::doSerialize(Archive& archive) const {
+    Response::doSerialize(archive);
+    archive << _info;
+}
+
+bool MsgResponse::doDeserialize(Archive& archive) {
+    Response::doDeserialize(archive);
+    archive >> _info;
+}

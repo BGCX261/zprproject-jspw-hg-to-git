@@ -8,13 +8,20 @@
 #ifndef MSGRESPONSE_HPP
 #define	MSGRESPONSE_HPP
 
-class MsgResponse {
+#include "Response.hpp"
+
+class MsgResponse: public Response, public RegisterSerializeable<MsgResponse, Response> {
 public:
     MsgResponse();
+    MsgResponse(const int& status, const std::string& answer, const std::string& info);
     MsgResponse(const MsgResponse& orig);
-    virtual ~MsgResponse();
+    std::string getInfo() const;
+protected:
+    virtual std::string id() const;
+    virtual bool doSerialize(Archive& archive) const;
+    virtual bool doDeserialize(Archive& archive);
 private:
-
+    std::string _info;
 };
 
 #endif	/* MSGRESPONSE_HPP */

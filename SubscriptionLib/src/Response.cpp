@@ -10,9 +10,28 @@
 Response::Response() {
 }
 
-Response::Response(const Response& orig) {
+Response::Response(const int& status, const std::string& answer) :
+    _status(status), _answer(answer) {
 }
 
-Response::~Response() {
+Response::Response(const Response& orig) :
+    _status(orig._status), _answer(orig._answer) {
 }
 
+bool Response::doSerialize(Archive& archive) const {
+    archive << _status;
+    archive << _answer;
+}
+
+bool Response::doDeserialize(Archive& archive) {
+    archive >> _status;
+    archive >> _answer;
+}
+
+int Response::getStatus() const {
+    return _status;
+}
+
+std::string Response::getAnswer() const {
+    return _answer;
+}

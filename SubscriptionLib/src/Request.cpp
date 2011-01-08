@@ -10,9 +10,23 @@
 Request::Request() {
 }
 
-Request::Request(const Request& orig) {
+Request::Request(const std::string& login) :
+    _login(login) {
 }
 
-Request::~Request() {
+Request::Request(const Request& orig) :
+    _login(orig._login) {
+}
+
+bool Request::doSerialize(Archive& archive) const {
+    archive << _login;
+}
+
+bool Request::doDeserialize(Archive& archive) {
+    archive >> _login;
+}
+
+std::string Request::getLogin() const {
+    return _login;
 }
 
