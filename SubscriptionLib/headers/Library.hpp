@@ -11,15 +11,17 @@
 #include "Request.hpp"
 #include "Response.hpp"
 
-class Library {
-public:
-    Library();
+namespace SubscriptionLib
+{
+    class Library {
+    public:
+        Library();
 
-    bool read();
-    bool write(const Request& request);
-private:
+        bool read();
+        bool write(const Request& request);
+    private:
 
-};
-
+    };
+}
 #endif	/* LIBRARY_HPP */
 

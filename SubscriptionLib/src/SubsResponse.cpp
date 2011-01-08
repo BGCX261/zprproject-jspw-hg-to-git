@@ -8,26 +8,33 @@
 #include "SubsResponse.hpp"
 #include "Id.hpp"
 
-SubsResponse::SubsResponse() {
-}
+namespace SubscriptionLib
+{
+    SubsResponse::SubsResponse() {
+    }
 
-SubsResponse::SubsResponse(const int& status, const std::string& answer) :
-    Response(status, answer) {
-}
+    SubsResponse::SubsResponse(const int& status, const std::string& answer) :
+        Response(status, answer) {
+    }
 
-SubsResponse::SubsResponse(const SubsResponse& orig) :
-    Response(orig) {
-}
+    SubsResponse::SubsResponse(const SubsResponse& orig) :
+        Response(orig) {
+    }
 
-std::string SubsResponse::id() const {
-    return ClassId<SubsResponse>::id();
-}
+    void SubsResponse::accept(Visitor& visitor) const {
+        visitor.handle(*this);
+    }
 
-bool SubsResponse::doSerialize(Archive& archive) const {
-    Response::doSerialize(archive);
-}
+    std::string SubsResponse::id() const {
+        return ClassId<SubsResponse>::id();
+    }
 
-bool SubsResponse::doDeserialize(Archive& archive) {
-    Response::doDeserialize(archive);
+    bool SubsResponse::doSerialize(Archive& archive) const {
+        Response::doSerialize(archive);
+    }
+
+    bool SubsResponse::doDeserialize(Archive& archive) {
+        Response::doDeserialize(archive);
+    }
 }
 

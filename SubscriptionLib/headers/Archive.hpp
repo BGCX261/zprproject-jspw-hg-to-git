@@ -10,16 +10,18 @@
 
 #include <string>
 
-class Archive {
-public:
-    virtual std::string str() const = 0;
-    virtual Archive& operator<< (const std::string& str) = 0;
-    virtual Archive& operator>> (std::string& str) = 0;
-    virtual Archive& operator<< (const int& i) = 0;
-    virtual Archive& operator>> (int& i) = 0;
-protected:
-    Archive();
-};
-
+namespace SubscriptionLib
+{
+    class Archive {
+    public:
+        virtual std::string str() const = 0;
+        virtual Archive& operator<< (const std::string& str) = 0;
+        virtual Archive& operator>> (std::string& str) = 0;
+        virtual Archive& operator<< (const int& i) = 0;
+        virtual Archive& operator>> (int& i) = 0;
+    protected:
+        Archive();
+    };
+}
 #endif	/* ARCHIVE_HPP */
 

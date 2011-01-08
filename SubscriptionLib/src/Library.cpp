@@ -7,7 +7,10 @@
 
 #include "Library.hpp"
 
-Library::Library() {
+namespace SubscriptionLib
+{
+    Library::Library() {
+    }
 }
 
 

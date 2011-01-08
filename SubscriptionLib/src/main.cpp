@@ -16,7 +16,7 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    StringArchive a;
+    SubscriptionLib::StringArchive a;
     return 0;
 }
 

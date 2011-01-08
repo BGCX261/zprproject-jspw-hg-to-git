@@ -10,19 +10,23 @@
 
 #include "Request.hpp"
 
-class SubsRequest: public Request, public RegisterSerializeable<SubsRequest, Request> {
-public:
-    SubsRequest();
-    SubsRequest(const std::string& login, const std::string& subId);
-    SubsRequest(const SubsRequest& orig);
-    std::string getSubId() const;
-protected:
-    virtual std::string id() const;
-    virtual bool doSerialize(Archive& archive) const;
-    virtual bool doDeserialize(Archive& archive);
-private:
-    std::string _subId;
-};
+namespace SubscriptionLib
+{
+    class SubsRequest: public Request, public RegisterSerializeable<SubsRequest, Request> {
+    public:
+        SubsRequest();
+        SubsRequest(const std::string& login, const std::string& subId);
+        SubsRequest(const SubsRequest& orig);
+        virtual void accept(Visitor& visitor) const;
+        std::string getSubId() const;
+    protected:
+        virtual std::string id() const;
+        virtual bool doSerialize(Archive& archive) const;
+        virtual bool doDeserialize(Archive& archive);
+    private:
+        std::string _subId;
+    };
+}
 
 #endif	/* SUBSREQUEST_HPP */
 

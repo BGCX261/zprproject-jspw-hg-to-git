@@ -7,30 +7,33 @@
 
 #include "StringArchive.hpp"
 
-StringArchive::StringArchive() {
-}
+namespace SubscriptionLib
+{
+    StringArchive::StringArchive() {
+    }
 
-StringArchive::StringArchive(const std::string& str) {
+    StringArchive::StringArchive(const std::string& str) {
 
-}
+    }
 
-std::string StringArchive::str() const {
-    
-}
+    std::string StringArchive::str() const {
 
-Archive& StringArchive::operator <<(const std::string& str) {
+    }
 
-}
+    Archive& StringArchive::operator <<(const std::string& str) {
 
-Archive& StringArchive::operator >>(std::string& str) {
+    }
 
-}
+    Archive& StringArchive::operator >>(std::string& str) {
 
-Archive& StringArchive::operator <<(const int& i) {
+    }
 
-}
+    Archive& StringArchive::operator <<(const int& i) {
 
-Archive& StringArchive::operator >>(int& i) {
-    
+    }
+
+    Archive& StringArchive::operator >>(int& i) {
+
+    }
 }
 

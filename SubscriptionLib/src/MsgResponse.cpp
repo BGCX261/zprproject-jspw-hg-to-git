@@ -8,27 +8,34 @@
 #include "MsgResponse.hpp"
 #include "Id.hpp"
 
-MsgResponse::MsgResponse() {
-}
+namespace SubscriptionLib
+{
+    MsgResponse::MsgResponse() {
+    }
 
-MsgResponse::MsgResponse(const int& status, const std::string& answer, const std::string& info) :
-    Response(status, answer), _info(info) {
-}
+    MsgResponse::MsgResponse(const int& status, const std::string& answer, const std::string& info) :
+        Response(status, answer), _info(info) {
+    }
 
-MsgResponse::MsgResponse(const MsgResponse& orig) :
-    Response(orig), _info(orig._info) {
-}
+    MsgResponse::MsgResponse(const MsgResponse& orig) :
+        Response(orig), _info(orig._info) {
+    }
 
-std::string MsgResponse::id() const {
-    return ClassId<MsgResponse>::id();
-}
+    void MsgResponse::accept(Visitor& visitor) const {
+        visitor.handle(*this);
+    }
 
-bool MsgResponse::doSerialize(Archive& archive) const {
-    Response::doSerialize(archive);
-    archive << _info;
-}
+    std::string MsgResponse::id() const {
+        return ClassId<MsgResponse>::id();
+    }
 
-bool MsgResponse::doDeserialize(Archive& archive) {
-    Response::doDeserialize(archive);
-    archive >> _info;
+    bool MsgResponse::doSerialize(Archive& archive) const {
+        Response::doSerialize(archive);
+        archive << _info;
+    }
+
+    bool MsgResponse::doDeserialize(Archive& archive) {
+        Response::doDeserialize(archive);
+        archive >> _info;
+    }
 }

@@ -9,11 +9,17 @@
 #define	MESSAGE_HPP
 
 #include <string>
+#include "Visitor.hpp"
 
-class Message {
-protected:
-    Message();
-};
+namespace SubscriptionLib
+{
+    class Message {
+    public:
+        virtual void accept(Visitor& visitor) const = 0;
+    protected:
+        Message();
+    };
+}
 
 #endif	/* MESSAGE_HPP */
 

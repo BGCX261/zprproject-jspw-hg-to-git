@@ -18,6 +18,7 @@
       <itemPath>headers/StringArchive.hpp</itemPath>
       <itemPath>headers/SubsResponse.hpp</itemPath>
       <itemPath>headers/UsubResponse.hpp</itemPath>
+      <itemPath>headers/Visitor.hpp</itemPath>
       <itemPath>headers/authRequest.hpp</itemPath>
       <itemPath>headers/message.hpp</itemPath>
       <itemPath>headers/request.hpp</itemPath>
@@ -50,6 +51,7 @@
       <itemPath>src/SubsResponse.cpp</itemPath>
       <itemPath>src/UsubRequest.cpp</itemPath>
       <itemPath>src/UsubResponse.cpp</itemPath>
+      <itemPath>src/Visitor.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -81,6 +83,7 @@
           <incDir>
             <pElem>src</pElem>
             <pElem>headers</pElem>
+            <pElem>../../boost</pElem>
           </incDir>
         </ccTool>
       </compileType>

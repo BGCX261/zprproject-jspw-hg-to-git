@@ -8,32 +8,39 @@
 #include "AuthRequest.hpp"
 #include "Id.hpp"
 
-AuthRequest::AuthRequest() {
-}
+namespace SubscriptionLib
+{
+    AuthRequest::AuthRequest() {
+    }
 
-AuthRequest::AuthRequest(const std::string& login, const std::string& password) :
-    Request(login), _password(password) {
-    
-}
+    AuthRequest::AuthRequest(const std::string& login, const std::string& password) :
+        Request(login), _password(password) {
 
-AuthRequest::AuthRequest(const AuthRequest& orig) :
-    Request(orig), _password(orig._password) {
-}
+    }
 
-std::string AuthRequest::id() const {
-    return ClassId<AuthRequest>::id();
-}
+    AuthRequest::AuthRequest(const AuthRequest& orig) :
+        Request(orig), _password(orig._password) {
+    }
 
-bool AuthRequest::doSerialize(Archive& archive) const {
-    Request::doSerialize(archive);
-    archive << _password;
-}
+    void AuthRequest::accept(Visitor& visitor) const {
+        visitor.handle(*this);
+    }
 
-bool AuthRequest::doDeserialize(Archive& archive) {
-    Request::doDeserialize(archive);
-    archive >> _password;
-}
+    std::string AuthRequest::id() const {
+        return ClassId<AuthRequest>::id();
+    }
 
-std::string AuthRequest::getPassword() const {
-    return _password;
+    bool AuthRequest::doSerialize(Archive& archive) const {
+        Request::doSerialize(archive);
+        archive << _password;
+    }
+
+    bool AuthRequest::doDeserialize(Archive& archive) {
+        Request::doDeserialize(archive);
+        archive >> _password;
+    }
+
+    std::string AuthRequest::getPassword() const {
+        return _password;
+    }
 }

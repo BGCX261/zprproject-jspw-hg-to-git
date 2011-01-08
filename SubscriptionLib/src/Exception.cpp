@@ -7,10 +7,20 @@
 
 #include "Exception.hpp"
 
-Exception::Exception() {
-}
+namespace SubscriptionLib
+{
+    Exception::Exception() {
+    }
 
-Exception::Exception(const std::string& str) :
-    _str(str) {
+    Exception::Exception(const std::string& str) :
+        _str(str) {
+    }
+
+    Exception::Exception(const boost::format& format) :
+        _str(boost::str(format)) {
+    }
+
+    Exception::~Exception() throw(){
+    }
 }
 

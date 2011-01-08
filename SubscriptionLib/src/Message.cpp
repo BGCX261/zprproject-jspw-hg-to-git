@@ -7,7 +7,9 @@
 
 #include "Message.hpp"
 
-Message::Message() {
+namespace SubscriptionLib
+{
+    Message::Message() {
+    }
 }
-
 

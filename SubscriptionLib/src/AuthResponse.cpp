@@ -8,25 +8,32 @@
 #include "AuthResponse.hpp"
 #include "Id.hpp"
 
-AuthResponse::AuthResponse() {
-}
+namespace SubscriptionLib
+{
+    AuthResponse::AuthResponse() {
+    }
 
-AuthResponse::AuthResponse(const int& status, const std::string& answer) :
-    Response(status, answer) {
-}
+    AuthResponse::AuthResponse(const int& status, const std::string& answer) :
+        Response(status, answer) {
+    }
 
-AuthResponse::AuthResponse(const AuthResponse& orig) :
-    Response(orig) {
-}
+    AuthResponse::AuthResponse(const AuthResponse& orig) :
+        Response(orig) {
+    }
 
-std::string AuthResponse::id() const {
-    return ClassId<AuthResponse>::id();
-}
+    void AuthResponse::accept(Visitor& visitor) const {
+        visitor.handle(*this);
+    }
 
-bool AuthResponse::doSerialize(Archive& archive) const {
-    Response::doSerialize(archive);
-}
+    std::string AuthResponse::id() const {
+        return ClassId<AuthResponse>::id();
+    }
 
-bool AuthResponse::doDeserialize(Archive& archive) {
-    Response::doDeserialize(archive);
+    bool AuthResponse::doSerialize(Archive& archive) const {
+        Response::doSerialize(archive);
+    }
+
+    bool AuthResponse::doDeserialize(Archive& archive) {
+        Response::doDeserialize(archive);
+    }
 }

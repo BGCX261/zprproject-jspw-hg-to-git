@@ -49,6 +49,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/SubsResponse.o \
 	${OBJECTDIR}/src/Exception.o \
 	${OBJECTDIR}/src/NewMsgRequest.o \
+	${OBJECTDIR}/src/Visitor.o \
 	${OBJECTDIR}/src/MsgResponse.o
 
 
@@ -79,87 +80,92 @@ dist/Debug/Cygwin-Windows/subscriptionlib.exe: ${OBJECTFILES}
 ${OBJECTDIR}/src/Response.o: src/Response.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Response.o src/Response.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Response.o src/Response.cpp
 
 ${OBJECTDIR}/src/AuthResponse.o: src/AuthResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthResponse.o src/AuthResponse.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthResponse.o src/AuthResponse.cpp
 
 ${OBJECTDIR}/src/Request.o: src/Request.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Request.o src/Request.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Request.o src/Request.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 ${OBJECTDIR}/src/Archive.o: src/Archive.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Archive.o src/Archive.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Archive.o src/Archive.cpp
 
 ${OBJECTDIR}/src/NewMsgResponse.o: src/NewMsgResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgResponse.o src/NewMsgResponse.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgResponse.o src/NewMsgResponse.cpp
 
 ${OBJECTDIR}/src/SubsRequest.o: src/SubsRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsRequest.o src/SubsRequest.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsRequest.o src/SubsRequest.cpp
 
 ${OBJECTDIR}/src/AuthRequest.o: src/AuthRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthRequest.o src/AuthRequest.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthRequest.o src/AuthRequest.cpp
 
 ${OBJECTDIR}/src/UsubRequest.o: src/UsubRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubRequest.o src/UsubRequest.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubRequest.o src/UsubRequest.cpp
 
 ${OBJECTDIR}/src/Message.o: src/Message.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Message.o src/Message.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Message.o src/Message.cpp
 
 ${OBJECTDIR}/src/StringArchive.o: src/StringArchive.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/StringArchive.o src/StringArchive.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/StringArchive.o src/StringArchive.cpp
 
 ${OBJECTDIR}/src/UsubResponse.o: src/UsubResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubResponse.o src/UsubResponse.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubResponse.o src/UsubResponse.cpp
 
 ${OBJECTDIR}/src/Library.o: src/Library.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Library.o src/Library.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Library.o src/Library.cpp
 
 ${OBJECTDIR}/src/SubsResponse.o: src/SubsResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsResponse.o src/SubsResponse.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsResponse.o src/SubsResponse.cpp
 
 ${OBJECTDIR}/src/Exception.o: src/Exception.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Exception.o src/Exception.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Exception.o src/Exception.cpp
 
 ${OBJECTDIR}/src/NewMsgRequest.o: src/NewMsgRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgRequest.o src/NewMsgRequest.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgRequest.o src/NewMsgRequest.cpp
+
+${OBJECTDIR}/src/Visitor.o: src/Visitor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Visitor.o src/Visitor.cpp
 
 ${OBJECTDIR}/src/MsgResponse.o: src/MsgResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/MsgResponse.o src/MsgResponse.cpp
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/MsgResponse.o src/MsgResponse.cpp
 
 # Subprojects
 .build-subprojects:

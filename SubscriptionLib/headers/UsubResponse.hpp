@@ -10,16 +10,20 @@
 
 #include "Response.hpp"
 
-class UsubResponse: public Response, public RegisterSerializeable<UsubResponse, Response> {
-public:
-    UsubResponse();
-    UsubResponse(const int& status, const std::string& answer);
-    UsubResponse(const UsubResponse& orig);
-protected:
-    virtual std::string id() const;
-    virtual bool doSerialize(Archive& archive) const;
-    virtual bool doDeserialize(Archive& archive);
-};
+namespace SubscriptionLib
+{
+    class UsubResponse: public Response, public RegisterSerializeable<UsubResponse, Response> {
+    public:
+        UsubResponse();
+        UsubResponse(const int& status, const std::string& answer);
+        UsubResponse(const UsubResponse& orig);
+        virtual void accept(Visitor& visitor) const;
+    protected:
+        virtual std::string id() const;
+        virtual bool doSerialize(Archive& archive) const;
+        virtual bool doDeserialize(Archive& archive);
+    };
+}
 
 #endif	/* USUBRESPONSE_HPP */
 

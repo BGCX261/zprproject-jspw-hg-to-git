@@ -9,14 +9,21 @@
 #define	EXCEPTION_HPP
 
 #include <string>
+#include <exception>
+#include <boost/format.hpp>
 
-class Exception : public std::exception {
-public:
-    Exception();
-    Exception(const std::string& str);
-private:
-    std::string _str;
-};
+namespace SubscriptionLib
+{
+    class Exception : public std::exception {
+    public:
+        Exception();
+        Exception(const std::string& str);
+        Exception(const boost::format& format);
+        virtual ~Exception() throw();
+    private:
+        std::string _str;
+    };
+}
 
 #endif	/* EXCEPTION_HPP */
 

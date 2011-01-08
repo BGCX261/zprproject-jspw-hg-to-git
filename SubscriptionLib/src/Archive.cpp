@@ -7,5 +7,8 @@
 
 #include "Archive.hpp"
 
-Archive::Archive() {
+namespace SubscriptionLib
+{
+    Archive::Archive() {
+    }
 }

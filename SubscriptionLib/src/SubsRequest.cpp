@@ -8,28 +8,35 @@
 #include "SubsRequest.hpp"
 #include "Id.hpp"
 
-SubsRequest::SubsRequest() {
-}
+namespace SubscriptionLib
+{
+    SubsRequest::SubsRequest() {
+    }
 
-SubsRequest::SubsRequest(const std::string& login, const std::string& subId) :
-    Request(login), _subId(subId) {
-}
+    SubsRequest::SubsRequest(const std::string& login, const std::string& subId) :
+        Request(login), _subId(subId) {
+    }
 
-SubsRequest::SubsRequest(const SubsRequest& orig) :
-    Request(orig), _subId(orig._subId) {
-}
+    SubsRequest::SubsRequest(const SubsRequest& orig) :
+        Request(orig), _subId(orig._subId) {
+    }
 
-std::string SubsRequest::id() const {
-    return ClassId<SubsRequest>::id();
-}
+    void SubsRequest::accept(Visitor& visitor) const {
+        visitor.handle(*this);
+    }
 
-bool SubsRequest::doSerialize(Archive& archive) const {
-    Request::doSerialize(archive);
-    archive << _subId;
-}
+    std::string SubsRequest::id() const {
+        return ClassId<SubsRequest>::id();
+    }
 
-bool SubsRequest::doDeserialize(Archive& archive) {
-    Request::doDeserialize(archive);
-    archive >> _subId;
+    bool SubsRequest::doSerialize(Archive& archive) const {
+        Request::doSerialize(archive);
+        archive << _subId;
+    }
+
+    bool SubsRequest::doDeserialize(Archive& archive) {
+        Request::doDeserialize(archive);
+        archive >> _subId;
+    }
 }
 

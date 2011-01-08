@@ -19,15 +19,18 @@ template<> struct ClassId<_classname_>    \
     }                                     \
 };                                        \
 
-ASSIGN_ID(AuthRequest, "AUTH");
-ASSIGN_ID(SubsRequest, "SUBS");
-ASSIGN_ID(UsubRequest, "USUB");
-ASSIGN_ID(NewMsgRequest, "NMSG");
-ASSIGN_ID(AuthResponse, "ATHR");
-ASSIGN_ID(MsgResponse, "MSGR");
-ASSIGN_ID(SubsResponse, "SUBR");
-ASSIGN_ID(UsubResponse, "USBR");
-ASSIGN_ID(NewMsgResponse, "NMSR");
+namespace SubscriptionLib
+{
+    ASSIGN_ID(AuthRequest, "AUTH");
+    ASSIGN_ID(SubsRequest, "SUBS");
+    ASSIGN_ID(UsubRequest, "USUB");
+    ASSIGN_ID(NewMsgRequest, "NMSG");
+    ASSIGN_ID(AuthResponse, "ATHR");
+    ASSIGN_ID(MsgResponse, "MSGR");
+    ASSIGN_ID(SubsResponse, "SUBR");
+    ASSIGN_ID(UsubResponse, "USBR");
+    ASSIGN_ID(NewMsgResponse, "NMSR");
+}
 
 #endif	/* ID_HPP */
 

@@ -8,28 +8,35 @@
 #include "NewMsgRequest.hpp"
 #include "Id.hpp"
 
-NewMsgRequest::NewMsgRequest() {
-}
+namespace SubscriptionLib
+{
+    NewMsgRequest::NewMsgRequest() {
+    }
 
-NewMsgRequest::NewMsgRequest(const std::string& login, const std::string& info) :
-    Request(login), _info(info) {
-}
+    NewMsgRequest::NewMsgRequest(const std::string& login, const std::string& info) :
+        Request(login), _info(info) {
+    }
 
-NewMsgRequest::NewMsgRequest(const NewMsgRequest& orig) :
-    Request(orig), _info(orig._info) {
-}
+    NewMsgRequest::NewMsgRequest(const NewMsgRequest& orig) :
+        Request(orig), _info(orig._info) {
+    }
 
-std::string NewMsgRequest::id() const {
-    return ClassId<NewMsgRequest>::id();
-}
+    void NewMsgRequest::accept(Visitor& visitor) const {
+        visitor.handle(*this);
+    }
 
-bool NewMsgRequest::doSerialize(Archive& archive) const {
-    Request::doSerialize(archive);
-    archive << _info;
-}
+    std::string NewMsgRequest::id() const {
+        return ClassId<NewMsgRequest>::id();
+    }
 
-bool NewMsgRequest::doDeserialize(Archive& archive) {
-    Request::doDeserialize(archive);
-    archive >> _info;
+    bool NewMsgRequest::doSerialize(Archive& archive) const {
+        Request::doSerialize(archive);
+        archive << _info;
+    }
+
+    bool NewMsgRequest::doDeserialize(Archive& archive) {
+        Request::doDeserialize(archive);
+        archive >> _info;
+    }
 }
 

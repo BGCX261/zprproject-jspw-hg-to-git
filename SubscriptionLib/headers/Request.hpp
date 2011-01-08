@@ -11,19 +11,22 @@
 #include "Message.hpp"
 #include "Serializeable.hpp"
 
-class Request: public Message, public Serializeable<Request> {
-public:
-    std::string getLogin() const;
-protected:
-    Request();
-    Request(const std::string& login);
-    Request(const Request& orig);
+namespace SubscriptionLib
+{
+    class Request: public Message, public Serializeable<Request> {
+    public:
+        std::string getLogin() const;
+    protected:
+        Request();
+        Request(const std::string& login);
+        Request(const Request& orig);
 
-    virtual bool doSerialize(Archive& archive) const;
-    virtual bool doDeserialize(Archive& archive);
+        virtual bool doSerialize(Archive& archive) const;
+        virtual bool doDeserialize(Archive& archive);
 
-    std::string _login;
-};
+        std::string _login;
+    };
+}
 
 #endif	/* REQUEST_HPP */
 

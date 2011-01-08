@@ -10,19 +10,23 @@
 
 #include "Request.hpp"
 
-class AuthRequest: public Request, public RegisterSerializeable<AuthRequest, Request> {
-public:
-    AuthRequest();
-    AuthRequest(const std::string& login, const std::string& password);
-    AuthRequest(const AuthRequest& orig);
-    std::string getPassword() const;
-protected:
-    virtual std::string id() const;
-    virtual bool doSerialize(Archive& archive) const;
-    virtual bool doDeserialize(Archive& archive);
-private:
-    std::string _password;
-};
+namespace SubscriptionLib
+{
+    class AuthRequest: public Request, public RegisterSerializeable<AuthRequest, Request> {
+    public:
+        AuthRequest();
+        AuthRequest(const std::string& login, const std::string& password);
+        AuthRequest(const AuthRequest& orig);
+        std::string getPassword() const;
+        virtual void accept(Visitor& visitor) const;
+    protected:
+        virtual std::string id() const;
+        virtual bool doSerialize(Archive& archive) const;
+        virtual bool doDeserialize(Archive& archive);
+    private:
+        std::string _password;
+    };
+}
 
 #endif	/* AUTHREQUEST_HPP */
 

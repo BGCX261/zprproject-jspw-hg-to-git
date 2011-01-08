@@ -49,6 +49,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/SubsResponse.o \
 	${OBJECTDIR}/src/Exception.o \
 	${OBJECTDIR}/src/NewMsgRequest.o \
+	${OBJECTDIR}/src/Visitor.o \
 	${OBJECTDIR}/src/MsgResponse.o
 
 
@@ -157,6 +158,11 @@ ${OBJECTDIR}/src/NewMsgRequest.o: src/NewMsgRequest.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgRequest.o src/NewMsgRequest.cpp
+
+${OBJECTDIR}/src/Visitor.o: src/Visitor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Visitor.o src/Visitor.cpp
 
 ${OBJECTDIR}/src/MsgResponse.o: src/MsgResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

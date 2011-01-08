@@ -10,18 +10,21 @@
 
 #include "Archive.hpp"
 
-class StringArchive: public Archive {
-public:
-    StringArchive();
-    StringArchive(const std::string& str);
-    virtual std::string str() const;
-    virtual Archive& operator<< (const std::string& str);
-    virtual Archive& operator>> (std::string& str);
-    virtual Archive& operator<< (const int& i);
-    virtual Archive& operator>> (int& i);
-private:
-    
-};
+namespace SubscriptionLib
+{
+    class StringArchive: public Archive {
+    public:
+        StringArchive();
+        StringArchive(const std::string& str);
+        virtual std::string str() const;
+        virtual Archive& operator<< (const std::string& str);
+        virtual Archive& operator>> (std::string& str);
+        virtual Archive& operator<< (const int& i);
+        virtual Archive& operator>> (int& i);
+    private:
+
+    };
+}
 
 #endif	/* STRINGARCHIVE_HPP */
 
