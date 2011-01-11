@@ -21,7 +21,10 @@ namespace SubscriptionLib
         Request(orig), _subId(orig._subId) {
     }
 
-    void SubsRequest::accept(Visitor& visitor) const {
+    SubsRequest::~SubsRequest() {
+    }
+
+    void SubsRequest::accept(ServerVisitor& visitor) const {
         visitor.handle(*this);
     }
 
@@ -37,6 +40,10 @@ namespace SubscriptionLib
     bool SubsRequest::doDeserialize(Archive& archive) {
         Request::doDeserialize(archive);
         archive >> _subId;
+    }
+
+    std::string SubsRequest::getSubId() const {
+        return _subId;
     }
 }
 

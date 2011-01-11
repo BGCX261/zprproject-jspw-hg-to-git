@@ -20,6 +20,9 @@ namespace SubscriptionLib
         _status(orig._status), _answer(orig._answer) {
     }
 
+    Response::~Response() {
+    }
+
     bool Response::doSerialize(Archive& archive) const {
         archive << _status;
         archive << _answer;

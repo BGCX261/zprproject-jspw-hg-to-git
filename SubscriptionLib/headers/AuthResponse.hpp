@@ -9,7 +9,6 @@
 #define	AUTHRESPONSE_HPP
 
 #include "Response.hpp"
-#include "Visitor.hpp"
 
 namespace SubscriptionLib
 {
@@ -18,7 +17,8 @@ namespace SubscriptionLib
         AuthResponse();
         AuthResponse(const int& status, const std::string& answer);
         AuthResponse(const AuthResponse& orig);
-        virtual void accept(Visitor& visitor) const;
+        virtual ~AuthResponse();
+        virtual void accept(ClientVisitor& visitor) const;
     protected:
         virtual std::string id() const;
         virtual bool doSerialize(Archive& archive) const;

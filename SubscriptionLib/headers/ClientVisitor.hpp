@@ -1,12 +1,12 @@
 /* 
- * File:   Visitor.hpp
+ * File:   ClientVisitor.hpp
  * Author: Pawel
  *
- * Created on 8 styczeń 2011, 21:10
+ * Created on 11 styczeń 2011, 10:10
  */
 
-#ifndef VISITOR_HPP
-#define	VISITOR_HPP
+#ifndef CLIENTVISITOR_HPP
+#define	CLIENTVISITOR_HPP
 
 namespace SubscriptionLib
 {
@@ -15,26 +15,20 @@ namespace SubscriptionLib
     class NewMsgResponse;
     class SubsResponse;
     class UsubResponse;
-    class NewMsgRequest;
-    class AuthRequest;
-    class SubsRequest;
-    class UsubRequest;
-    
-    class Visitor {
+
+    class ClientVisitor {
     public:
+        virtual ~ClientVisitor();
         virtual void handle(const AuthResponse& res) = 0;
         virtual void handle(const MsgResponse& res) = 0;
         virtual void handle(const NewMsgResponse& res) = 0;
         virtual void handle(const SubsResponse& res) = 0;
         virtual void handle(const UsubResponse& res) = 0;
-        virtual void handle(const NewMsgRequest& req) = 0;
-        virtual void handle(const AuthRequest& req) = 0;
-        virtual void handle(const SubsRequest& req) = 0;
-        virtual void handle(const UsubRequest& req) = 0;
     protected:
-        Visitor();
+        ClientVisitor();
     };
+
 }
 
-#endif	/* VISITOR_HPP */
+#endif	/* CLIENTVISITOR_HPP */
 

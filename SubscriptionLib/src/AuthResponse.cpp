@@ -21,7 +21,10 @@ namespace SubscriptionLib
         Response(orig) {
     }
 
-    void AuthResponse::accept(Visitor& visitor) const {
+    AuthResponse::~AuthResponse() {
+    }
+
+    void AuthResponse::accept(ClientVisitor& visitor) const {
         visitor.handle(*this);
     }
 

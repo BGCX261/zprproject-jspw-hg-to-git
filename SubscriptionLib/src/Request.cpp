@@ -20,6 +20,9 @@ namespace SubscriptionLib
         _login(orig._login) {
     }
 
+    Request::~Request() {
+    }
+
     bool Request::doSerialize(Archive& archive) const {
         archive << _login;
     }

@@ -11,4 +11,7 @@ namespace SubscriptionLib
 {
     Archive::Archive() {
     }
+
+    Archive::~Archive() {
+    }
 }

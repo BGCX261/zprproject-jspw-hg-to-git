@@ -21,7 +21,10 @@ namespace SubscriptionLib
         Response(orig), _info(orig._info) {
     }
 
-    void MsgResponse::accept(Visitor& visitor) const {
+    MsgResponse::~MsgResponse() {
+    }
+
+    void MsgResponse::accept(ClientVisitor& visitor) const {
         visitor.handle(*this);
     }
 
@@ -37,5 +40,9 @@ namespace SubscriptionLib
     bool MsgResponse::doDeserialize(Archive& archive) {
         Response::doDeserialize(archive);
         archive >> _info;
+    }
+
+    std::string MsgResponse::getInfo() const {
+        return _info;
     }
 }

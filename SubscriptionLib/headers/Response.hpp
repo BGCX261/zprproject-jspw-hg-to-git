@@ -10,11 +10,17 @@
 
 #include "Message.hpp"
 #include "Serializeable.hpp"
+#include "ClientVisitor.hpp"
 
 namespace SubscriptionLib
 {
     class Response: public Message, public Serializeable<Response> {
     public:
+        typedef boost::shared_ptr<Response> PResponse;
+
+        virtual ~Response();
+
+        virtual void accept(ClientVisitor& visitor) const = 0;
         int getStatus() const;
         std::string getAnswer() const;
     protected:

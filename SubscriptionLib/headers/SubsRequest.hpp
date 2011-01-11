@@ -17,7 +17,8 @@ namespace SubscriptionLib
         SubsRequest();
         SubsRequest(const std::string& login, const std::string& subId);
         SubsRequest(const SubsRequest& orig);
-        virtual void accept(Visitor& visitor) const;
+        virtual ~SubsRequest();
+        virtual void accept(ServerVisitor& visitor) const;
         std::string getSubId() const;
     protected:
         virtual std::string id() const;

@@ -15,14 +15,16 @@ namespace SubscriptionLib
 
     NewMsgResponse::NewMsgResponse(const int& status, const std::string& answer) :
         Response(status, answer) {
-
     }
 
     NewMsgResponse::NewMsgResponse(const NewMsgResponse& orig) :
         Response(orig) {
     }
 
-    void NewMsgResponse::accept(Visitor& visitor) const {
+    NewMsgResponse::~NewMsgResponse() {
+    }
+
+    void NewMsgResponse::accept(ClientVisitor& visitor) const {
         visitor.handle(*this);
     }
 

@@ -9,12 +9,18 @@
 #define	REQUEST_HPP
 
 #include "Message.hpp"
+#include "ServerVisitor.hpp"
 #include "Serializeable.hpp"
 
 namespace SubscriptionLib
 {
     class Request: public Message, public Serializeable<Request> {
     public:
+        typedef boost::shared_ptr<Request> PRequest;
+
+        virtual ~Request();
+
+        virtual void accept(ServerVisitor& visitor) const = 0;
         std::string getLogin() const;
     protected:
         Request();

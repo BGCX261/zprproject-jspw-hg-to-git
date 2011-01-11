@@ -11,5 +11,8 @@ namespace SubscriptionLib
 {
     Message::Message() {
     }
+
+    Message::~Message() {
+    }
 }
 

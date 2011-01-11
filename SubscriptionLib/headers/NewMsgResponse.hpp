@@ -17,12 +17,12 @@ namespace SubscriptionLib
         NewMsgResponse();
         NewMsgResponse(const int& status, const std::string& answer);
         NewMsgResponse(const NewMsgResponse& orig);
-        virtual void accept(Visitor& visitor) const;
+        virtual ~NewMsgResponse();
+        virtual void accept(ClientVisitor& visitor) const;
     protected:
         virtual std::string id() const;
         virtual bool doSerialize(Archive& archive) const;
         virtual bool doDeserialize(Archive& archive);
-
     };
 }
 

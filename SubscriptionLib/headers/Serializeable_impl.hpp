@@ -42,6 +42,7 @@ namespace SubscriptionLib
             throw new Exception((boost::format("Unknown message id %1%") % id).str());
         std::auto_ptr<TType> result((*i->second)());
         static_cast<Serializeable<TType>*>(result.get())->doDeserialize(archive);
+        return result;
     }
 
     template<class TType>

@@ -35,9 +35,10 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/Response.o \
 	${OBJECTDIR}/src/AuthResponse.o \
+	${OBJECTDIR}/src/ClientVisitor.o \
 	${OBJECTDIR}/src/Request.o \
-	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/src/Archive.o \
+	${OBJECTDIR}/src/ServerVisitor.o \
 	${OBJECTDIR}/src/NewMsgResponse.o \
 	${OBJECTDIR}/src/SubsRequest.o \
 	${OBJECTDIR}/src/AuthRequest.o \
@@ -45,11 +46,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Message.o \
 	${OBJECTDIR}/src/StringArchive.o \
 	${OBJECTDIR}/src/UsubResponse.o \
-	${OBJECTDIR}/src/Library.o \
 	${OBJECTDIR}/src/SubsResponse.o \
 	${OBJECTDIR}/src/Exception.o \
 	${OBJECTDIR}/src/NewMsgRequest.o \
-	${OBJECTDIR}/src/Visitor.o \
 	${OBJECTDIR}/src/MsgResponse.o
 
 
@@ -71,11 +70,13 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-Debug.mk dist/Debug/Cygwin-Windows/subscriptionlib.exe
+	"${MAKE}"  -f nbproject/Makefile-Debug.mk dist/Debug/Cygwin-Windows/libsubscriptionlib.a
 
-dist/Debug/Cygwin-Windows/subscriptionlib.exe: ${OBJECTFILES}
+dist/Debug/Cygwin-Windows/libsubscriptionlib.a: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/subscriptionlib ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${RM} dist/Debug/Cygwin-Windows/libsubscriptionlib.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsubscriptionlib.a ${OBJECTFILES} 
+	$(RANLIB) dist/Debug/Cygwin-Windows/libsubscriptionlib.a
 
 ${OBJECTDIR}/src/Response.o: src/Response.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -87,20 +88,25 @@ ${OBJECTDIR}/src/AuthResponse.o: src/AuthResponse.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthResponse.o src/AuthResponse.cpp
 
+${OBJECTDIR}/src/ClientVisitor.o: src/ClientVisitor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/ClientVisitor.o src/ClientVisitor.cpp
+
 ${OBJECTDIR}/src/Request.o: src/Request.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Request.o src/Request.cpp
 
-${OBJECTDIR}/src/main.o: src/main.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
-
 ${OBJECTDIR}/src/Archive.o: src/Archive.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Archive.o src/Archive.cpp
+
+${OBJECTDIR}/src/ServerVisitor.o: src/ServerVisitor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/ServerVisitor.o src/ServerVisitor.cpp
 
 ${OBJECTDIR}/src/NewMsgResponse.o: src/NewMsgResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -137,11 +143,6 @@ ${OBJECTDIR}/src/UsubResponse.o: src/UsubResponse.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/UsubResponse.o src/UsubResponse.cpp
 
-${OBJECTDIR}/src/Library.o: src/Library.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Library.o src/Library.cpp
-
 ${OBJECTDIR}/src/SubsResponse.o: src/SubsResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
@@ -157,11 +158,6 @@ ${OBJECTDIR}/src/NewMsgRequest.o: src/NewMsgRequest.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgRequest.o src/NewMsgRequest.cpp
 
-${OBJECTDIR}/src/Visitor.o: src/Visitor.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Visitor.o src/Visitor.cpp
-
 ${OBJECTDIR}/src/MsgResponse.o: src/MsgResponse.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
@@ -173,7 +169,7 @@ ${OBJECTDIR}/src/MsgResponse.o: src/MsgResponse.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r build/Debug
-	${RM} dist/Debug/Cygwin-Windows/subscriptionlib.exe
+	${RM} dist/Debug/Cygwin-Windows/libsubscriptionlib.a
 
 # Subprojects
 .clean-subprojects:

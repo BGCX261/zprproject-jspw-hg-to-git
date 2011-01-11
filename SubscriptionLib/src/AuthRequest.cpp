@@ -22,7 +22,10 @@ namespace SubscriptionLib
         Request(orig), _password(orig._password) {
     }
 
-    void AuthRequest::accept(Visitor& visitor) const {
+    AuthRequest::~AuthRequest() {
+    }
+
+    void AuthRequest::accept(ServerVisitor& visitor) const {
         visitor.handle(*this);
     }
 

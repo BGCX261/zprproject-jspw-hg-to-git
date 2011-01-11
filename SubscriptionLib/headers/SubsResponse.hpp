@@ -17,7 +17,8 @@ namespace SubscriptionLib
         SubsResponse();
         SubsResponse(const int& status, const std::string& answer);
         SubsResponse(const SubsResponse& orig);
-        virtual void accept(Visitor& visitor) const;
+        virtual ~SubsResponse();
+        virtual void accept(ClientVisitor& visitor) const;
     protected:
         virtual std::string id() const;
         virtual bool doSerialize(Archive& archive) const;

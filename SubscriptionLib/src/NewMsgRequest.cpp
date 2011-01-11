@@ -13,15 +13,18 @@ namespace SubscriptionLib
     NewMsgRequest::NewMsgRequest() {
     }
 
-    NewMsgRequest::NewMsgRequest(const std::string& login, const std::string& info) :
-        Request(login), _info(info) {
+    NewMsgRequest::NewMsgRequest(const std::string& login, const std::string& subId, const std::string& info) :
+        Request(login), _subId(subId), _info(info) {
     }
 
     NewMsgRequest::NewMsgRequest(const NewMsgRequest& orig) :
-        Request(orig), _info(orig._info) {
+        Request(orig), _subId(orig._subId), _info(orig._info) {
     }
 
-    void NewMsgRequest::accept(Visitor& visitor) const {
+    NewMsgRequest::~NewMsgRequest() {
+    }
+
+    void NewMsgRequest::accept(ServerVisitor& visitor) const {
         visitor.handle(*this);
     }
 
@@ -37,6 +40,14 @@ namespace SubscriptionLib
     bool NewMsgRequest::doDeserialize(Archive& archive) {
         Request::doDeserialize(archive);
         archive >> _info;
+    }
+
+    std::string NewMsgRequest::getSubId() const {
+        return _subId;
+    }
+
+    std::string NewMsgRequest::getInfo() const {
+        return _info;
     }
 }
 

@@ -9,13 +9,13 @@
 #define	MESSAGE_HPP
 
 #include <string>
-#include "Visitor.hpp"
+#include <boost/shared_ptr.hpp>
 
 namespace SubscriptionLib
 {
     class Message {
     public:
-        virtual void accept(Visitor& visitor) const = 0;
+        virtual ~Message();
     protected:
         Message();
     };

@@ -7,18 +7,18 @@
                    kind="SOURCE_LOGICAL_FOLDER">
       <itemPath>headers/Archive.hpp</itemPath>
       <itemPath>headers/AuthResponse.hpp</itemPath>
+      <itemPath>headers/ClientVisitor.hpp</itemPath>
       <itemPath>headers/Exception.hpp</itemPath>
       <itemPath>headers/Id.hpp</itemPath>
-      <itemPath>headers/Library.hpp</itemPath>
       <itemPath>headers/MsgResponse.hpp</itemPath>
       <itemPath>headers/NewMsgRequest.hpp</itemPath>
       <itemPath>headers/NewMsgResponse.hpp</itemPath>
       <itemPath>headers/Serializeable.hpp</itemPath>
       <itemPath>headers/Serializeable_impl.hpp</itemPath>
+      <itemPath>headers/ServerVisitor.hpp</itemPath>
       <itemPath>headers/StringArchive.hpp</itemPath>
       <itemPath>headers/SubsResponse.hpp</itemPath>
       <itemPath>headers/UsubResponse.hpp</itemPath>
-      <itemPath>headers/Visitor.hpp</itemPath>
       <itemPath>headers/authRequest.hpp</itemPath>
       <itemPath>headers/message.hpp</itemPath>
       <itemPath>headers/request.hpp</itemPath>
@@ -38,21 +38,20 @@
       <itemPath>src/Archive.cpp</itemPath>
       <itemPath>src/AuthRequest.cpp</itemPath>
       <itemPath>src/AuthResponse.cpp</itemPath>
+      <itemPath>src/ClientVisitor.cpp</itemPath>
       <itemPath>src/Exception.cpp</itemPath>
-      <itemPath>src/Library.cpp</itemPath>
       <itemPath>src/Message.cpp</itemPath>
       <itemPath>src/MsgResponse.cpp</itemPath>
       <itemPath>src/NewMsgRequest.cpp</itemPath>
       <itemPath>src/NewMsgResponse.cpp</itemPath>
       <itemPath>src/Request.cpp</itemPath>
       <itemPath>src/Response.cpp</itemPath>
+      <itemPath>src/ServerVisitor.cpp</itemPath>
       <itemPath>src/StringArchive.cpp</itemPath>
       <itemPath>src/SubsRequest.cpp</itemPath>
       <itemPath>src/SubsResponse.cpp</itemPath>
       <itemPath>src/UsubRequest.cpp</itemPath>
       <itemPath>src/UsubResponse.cpp</itemPath>
-      <itemPath>src/Visitor.cpp</itemPath>
-      <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -72,7 +71,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="1">
+    <conf name="Debug" type="3">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <compilerSet>Cygwin|Cygwin</compilerSet>
@@ -86,6 +85,8 @@
             <pElem>../../boost</pElem>
           </incDir>
         </ccTool>
+        <archiverTool>
+        </archiverTool>
       </compileType>
     </conf>
     <conf name="Release" type="3">

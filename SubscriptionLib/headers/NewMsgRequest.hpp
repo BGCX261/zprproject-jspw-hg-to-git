@@ -15,15 +15,19 @@ namespace SubscriptionLib
     class NewMsgRequest: public Request, public RegisterSerializeable<NewMsgRequest, Request> {
     public:
         NewMsgRequest();
-        NewMsgRequest(const std::string& login, const std::string& info);
+        NewMsgRequest(const std::string& login, const std::string& subId, const std::string& info);
         NewMsgRequest(const NewMsgRequest& orig);
-        virtual void accept(Visitor& visitor) const;
+        virtual ~NewMsgRequest();
+        std::string getInfo() const;
+        std::string getSubId() const;
+        virtual void accept(ServerVisitor& visitor) const;
     protected:
         virtual std::string id() const;
         virtual bool doSerialize(Archive& archive) const;
         virtual bool doDeserialize(Archive& archive);
     private:
         std::string _info;
+        std::string _subId;
     };
 }
 

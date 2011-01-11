@@ -17,8 +17,9 @@ namespace SubscriptionLib
         AuthRequest();
         AuthRequest(const std::string& login, const std::string& password);
         AuthRequest(const AuthRequest& orig);
+        virtual ~AuthRequest();
         std::string getPassword() const;
-        virtual void accept(Visitor& visitor) const;
+        virtual void accept(ServerVisitor& visitor) const;
     protected:
         virtual std::string id() const;
         virtual bool doSerialize(Archive& archive) const;
