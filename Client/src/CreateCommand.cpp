@@ -11,7 +11,6 @@
 
 CreateCommand::CreateCommand(int threadId) :
     CommandThread(threadId) {
-    
 }
 
 CreateCommand::CreateCommand(const CreateCommand& orig) :

@@ -14,7 +14,6 @@
 
 #include <iostream>
 Application::Application() {
-    
 }
 
 void Application::run() {

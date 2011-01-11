@@ -7,6 +7,7 @@
                    kind="SOURCE_LOGICAL_FOLDER">
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Application.hpp</itemPath>
       <itemPath>headers/AuthCommand.hpp</itemPath>
+      <itemPath>headers/Client.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/CmdFactory.hpp</itemPath>
       <itemPath>headers/Command.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/CommandThread.hpp</itemPath>
@@ -35,6 +36,7 @@
                    kind="SOURCE_LOGICAL_FOLDER">
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Application.cpp</itemPath>
       <itemPath>src/AuthCommand.cpp</itemPath>
+      <itemPath>src/Client.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CmdFactory.cpp</itemPath>
       <itemPath>src/Command.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CommandThread.cpp</itemPath>
@@ -79,6 +81,7 @@
             <pElem>headers</pElem>
             <pElem>src</pElem>
             <pElem>../../boost</pElem>
+            <pElem>../SubscriptionLib/headers</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
@@ -87,6 +90,9 @@
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibFileItem>../../boost_lib/cygboost_thread-mt-1_43.dll</linkerLibFileItem>
+            <linkerLibFileItem>../SubscriptionLib/dist/Debug/Cygwin-Windows/libsubscriptionlib.a</linkerLibFileItem>
+            <linkerLibFileItem>../../boost_lib/cygboost_unit_test_framework-mt-1_43.dll</linkerLibFileItem>
+            <linkerLibFileItem>../../boost_lib/cygboost_system-mt-1_43.dll</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

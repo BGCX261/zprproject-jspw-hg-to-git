@@ -18,18 +18,16 @@ public:
     typedef boost::shared_ptr<Terminal> PTerminal;
 
     static PTerminal getInstance();
+    virtual ~Terminal();
     
     Command::PCommand readCmd();
     std::string read();
     void write(const std::string& str);
 
-    virtual ~Terminal();
-
 private:
     static PTerminal _pInstance;
 
     Terminal();
-    Terminal(const Terminal& orig);
 
     boost::mutex _mutex;
 };

@@ -10,4 +10,6 @@
 Visitor::Visitor() {
 }
 
+Visitor::~Visitor() {
+}
 

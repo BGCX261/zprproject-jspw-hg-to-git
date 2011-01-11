@@ -17,7 +17,6 @@ public:
     typedef boost::shared_ptr<ConditionVariable> PCondVar;
 
     ConditionVariable();
-    ConditionVariable(const ConditionVariable& orig);
     virtual ~ConditionVariable();
 
     void notify_one();

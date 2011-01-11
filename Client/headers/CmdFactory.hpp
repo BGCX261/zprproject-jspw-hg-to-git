@@ -18,12 +18,12 @@ public:
     typedef Command::PCommand (*NewCmdFun)(const std::vector<std::string>&);
     typedef boost::shared_ptr<CmdFactory> PCmdFactory;
 
+    virtual ~CmdFactory();
+
     static PCmdFactory getInstance();
     bool registerCmd(const std::string& key, NewCmdFun fun);
     Command::PCommand create(const std::string& key, const std::vector<std::string>& strs);
     Command::PCommand create(const std::vector<std::string>& strs);
-
-    ~CmdFactory();
     
 private:
     typedef std::map<std::string, NewCmdFun> Callbacks;
@@ -32,7 +32,6 @@ private:
     static PCmdFactory _pInstance;
 
     CmdFactory();
-    CmdFactory(const CmdFactory& orig);
     Callbacks::const_iterator find(const std::string& key);
 };
 

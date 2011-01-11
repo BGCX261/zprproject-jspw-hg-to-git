@@ -7,13 +7,11 @@
 
 #include "Queue.hpp"
 
-Queue::Queue() {
-    
+Queue::Queue() { 
 }
 
 Queue::Queue(ConditionVariable::PCondVar generalCondVar) :
     _generalCondVar(generalCondVar) {
-
 }
 
 Queue::~Queue() {
@@ -57,27 +55,27 @@ void Queue::pop(Command& cmd) {
 }
 */
 
-void Queue::handle(const AuthCommand& cmd) const {
+void Queue::handle(const AuthCommand& cmd) {
     Command::PCommand ap(new AuthCommand(cmd));
     _queue.push(ap);
 }
 
-void Queue::handle(const CreateCommand& cmd) const {
+void Queue::handle(const CreateCommand& cmd) {
     Command::PCommand ap(new CreateCommand(cmd));
     _queue.push(ap);
 }
 
-void Queue::handle(const DiscCommand& cmd) const {
+void Queue::handle(const DiscCommand& cmd) {
     Command::PCommand ap(new DiscCommand(cmd));
     _queue.push(ap);
 }
 
-void Queue::handle(const SubsCommand& cmd) const {
+void Queue::handle(const SubsCommand& cmd) {
     Command::PCommand ap(new SubsCommand(cmd));
     _queue.push(ap);
 }
 
-void Queue::handle(const UsubCommand& cmd) const {
+void Queue::handle(const UsubCommand& cmd) {
     Command::PCommand ap(new UsubCommand(cmd));
     _queue.push(ap);
 }

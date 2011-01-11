@@ -13,7 +13,6 @@
 
 SubsCommand::SubsCommand(std::string login, std::string type, int threadId) :
     CommandThread(threadId), _login(login), _type(type) {
-    
 }
 
 SubsCommand::SubsCommand(const SubsCommand& orig) :

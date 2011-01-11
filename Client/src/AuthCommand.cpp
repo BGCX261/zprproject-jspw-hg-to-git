@@ -11,7 +11,6 @@
 
 AuthCommand::AuthCommand(std::string login, std::string password, int threadId) :
     CommandThread(threadId), _login(login), _password(password) {
-    
 }
 
 AuthCommand::AuthCommand(const AuthCommand& orig) :

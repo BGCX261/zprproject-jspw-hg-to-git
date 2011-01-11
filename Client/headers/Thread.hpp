@@ -11,7 +11,10 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
 #include "ConditionVariable.hpp"
+#include "ClientVisitor.hpp"
 #include "Queue.hpp"
+
+using namespace SubscriptionLib;
 
 class Thread {
 public:
@@ -22,29 +25,37 @@ public:
 
     void run();
     void sendCmd(const Command& cmd);
-
 private:
     typedef boost::shared_ptr<boost::thread> PBThread;
 
-    struct Worker: public Visitor {
-        ConditionVariable::PCondVar pCondVar;
-        Queue queue;
-        
-        Worker(/*parameters*/);
-        ~Worker();
-        
-        void run();
-
-        void handle(const AuthCommand& authCmd) const;
-        void handle(const CreateCommand& createCmd) const;
-        void handle(const DiscCommand& discCmd) const;
-        void handle(const SubsCommand& subsCmd) const;
-        void handle(const UsubCommand& usubCmd) const;
-    };
+    struct Worker;
 
     int _id;
     Worker _worker;
     PBThread _pBThread;
+};
+
+struct Thread::Worker: public Visitor, public ClientVisitor {
+    ConditionVariable::PCondVar pCondVar;
+    Queue queue;
+    Client client;
+
+    Worker(/*parameters*/);
+    ~Worker();
+
+    void run();
+
+    void handle(const AuthCommand& authCmd);
+    void handle(const CreateCommand& createCmd);
+    void handle(const DiscCommand& discCmd);
+    void handle(const SubsCommand& subsCmd);
+    void handle(const UsubCommand& usubCmd);
+
+    virtual void handle(const AuthResponse& res);
+    virtual void handle(const MsgResponse& res);
+    virtual void handle(const NewMsgResponse& res);
+    virtual void handle(const SubsResponse& res);
+    virtual void handle(const UsubResponse& res);
 };
 
 #endif	/* THREAD_HPP */

@@ -14,6 +14,7 @@ class Exception: public std::exception {
 public:
     Exception();
     Exception(const Exception& orig);
+    virtual ~Exception();
 
 private:
 

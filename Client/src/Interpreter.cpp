@@ -22,23 +22,23 @@ Interpreter::PInterpreter Interpreter::getInstance() {
     return _pInstance;
 }
 
-void Interpreter::handle(const AuthCommand& authCmd) const {
+void Interpreter::handle(const AuthCommand& authCmd){
     Pool::getInstance()->passCmd(authCmd.getId(), authCmd);
 }
 
-void Interpreter::handle(const CreateCommand& createCmd) const {
+void Interpreter::handle(const CreateCommand& createCmd){
     Pool::getInstance()->createThread(createCmd.getId());
 }
 
-void Interpreter::handle(const DiscCommand& discCmd) const {
+void Interpreter::handle(const DiscCommand& discCmd){
     Pool::getInstance()->passCmd(discCmd.getId(), discCmd);
 }
 
-void Interpreter::handle(const SubsCommand& subsCmd) const {
+void Interpreter::handle(const SubsCommand& subsCmd){
     Pool::getInstance()->passCmd(subsCmd.getId(), subsCmd);
 }
 
-void Interpreter::handle(const UsubCommand& usubCmd) const {
+void Interpreter::handle(const UsubCommand& usubCmd){
     Pool::getInstance()->passCmd(usubCmd.getId(), usubCmd);
 }
 

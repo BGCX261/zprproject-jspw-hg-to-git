@@ -11,7 +11,6 @@
 
 UsubCommand::UsubCommand(std::string login, std::string type, int threadId) :
     CommandThread(threadId), _login(login), _type(type) {
-    
 }
 
 UsubCommand::UsubCommand(const UsubCommand& orig) :

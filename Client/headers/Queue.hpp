@@ -28,11 +28,11 @@ public:
     void setCondVar(ConditionVariable::PCondVar var);
     //void pop(Command& cmd);
 
-    virtual void handle(const AuthCommand& ) const;
-    virtual void handle(const CreateCommand& ) const;
-    virtual void handle(const DiscCommand& ) const;
-    virtual void handle(const SubsCommand& ) const;
-    virtual void handle(const UsubCommand& ) const;
+    virtual void handle(const AuthCommand& );
+    virtual void handle(const CreateCommand& );
+    virtual void handle(const DiscCommand& );
+    virtual void handle(const SubsCommand& );
+    virtual void handle(const UsubCommand& );
     
 private:
 

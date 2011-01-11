@@ -17,6 +17,9 @@ class Visitor;
 class Command {
 public:
     typedef boost::shared_ptr<Command> PCommand;
+
+    virtual ~Command();
+
     static PCommand create(const std::vector<std::string>& strs);
 
     virtual void accept(const Visitor& visitor) const = 0;

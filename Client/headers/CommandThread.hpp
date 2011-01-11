@@ -10,11 +10,14 @@
 
 class CommandThread {
 public:
-    CommandThread(int threadId);
-    CommandThread(const CommandThread& orig);
+    int getId() const;
+
     virtual ~CommandThread();
 
-    int getId() const;
+protected:
+    CommandThread(int threadId);
+    CommandThread(const CommandThread& orig);
+
 private:
     int _threadId;
 };

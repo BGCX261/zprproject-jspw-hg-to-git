@@ -31,14 +31,14 @@ Thread::Worker::Worker() :
 }
 
 Thread::Worker::~Worker() {
-
 }
 
 void Thread::Worker::run() {
     Terminal::getInstance()->write("Worker\n");\
     Command::PCommand pCmd;
     while(1) {
-        pCondVar->wait();
+        if (queue.empty())
+            pCondVar->wait();
         if (queue.tryPop(pCmd)) {
             Terminal::getInstance()->write("Command");
             pCmd->accept(*this);
@@ -47,22 +47,42 @@ void Thread::Worker::run() {
     }
 }
 
-void Thread::Worker::handle(const AuthCommand& authCmd) const {
+void Thread::Worker::handle(const AuthCommand& authCmd) {
 
 }
 
-void Thread::Worker::handle(const CreateCommand& createCmd) const {
+void Thread::Worker::handle(const CreateCommand& createCmd) {
     //exception
 }
 
-void Thread::Worker::handle(const DiscCommand& discCmd) const {
+void Thread::Worker::handle(const DiscCommand& discCmd) {
 
 }
 
-void Thread::Worker::handle(const SubsCommand& subsCmd) const {
+void Thread::Worker::handle(const SubsCommand& subsCmd) {
 
 }
 
-void Thread::Worker::handle(const UsubCommand& usubCmd) const {
+void Thread::Worker::handle(const UsubCommand& usubCmd) {
+    
+}
+
+void Thread::Worker::handle(const AuthResponse& res) {
+
+}
+
+void Thread::Worker::handle(const MsgResponse& res) {
+
+}
+
+void Thread::Worker::handle(const NewMsgResponse& res) {
+
+}
+
+void Thread::Worker::handle(const SubsResponse& res) {
+
+}
+
+void Thread::Worker::handle(const UsubResponse& res) {
     
 }

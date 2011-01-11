@@ -20,11 +20,11 @@ public:
     static PInterpreter getInstance();
     virtual ~Interpreter();
 
-    void handle(const AuthCommand& authCmd) const;
-    void handle(const CreateCommand& createCmd) const;
-    void handle(const DiscCommand& discCmd) const;
-    void handle(const SubsCommand& subsCmd) const;
-    void handle(const UsubCommand& usubCmd) const;
+    void handle(const AuthCommand& authCmd);
+    void handle(const CreateCommand& createCmd);
+    void handle(const DiscCommand& discCmd);
+    void handle(const SubsCommand& subsCmd);
+    void handle(const UsubCommand& usubCmd);
     void interpret(const Command& cmd);
 
 private:

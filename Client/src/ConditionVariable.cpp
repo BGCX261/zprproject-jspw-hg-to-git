@@ -10,9 +10,6 @@
 ConditionVariable::ConditionVariable() {
 }
 
-ConditionVariable::ConditionVariable(const ConditionVariable& orig) {
-}
-
 ConditionVariable::~ConditionVariable() {
 }
 

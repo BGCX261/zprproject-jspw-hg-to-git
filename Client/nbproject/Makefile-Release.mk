@@ -33,6 +33,7 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/Client.o \
 	${OBJECTDIR}/_ext/1877225195/Pool.o \
 	${OBJECTDIR}/_ext/1877225195/Interpreter.o \
 	${OBJECTDIR}/src/DiscCommand.o \
@@ -46,8 +47,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/UsubCommand.o \
 	${OBJECTDIR}/_ext/1877225195/Exception.o \
 	${OBJECTDIR}/src/ConditionVariable.o \
-	${OBJECTDIR}/_ext/1877225195/Configuration.o \
 	${OBJECTDIR}/_ext/1877225195/Queue.o \
+	${OBJECTDIR}/_ext/1877225195/Configuration.o \
 	${OBJECTDIR}/_ext/1877225195/CommandThread.o \
 	${OBJECTDIR}/src/Command.o \
 	${OBJECTDIR}/src/Visitor.o \
@@ -77,6 +78,11 @@ LDLIBSOPTIONS=
 dist/Release/Cygwin-Windows/client.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/Cygwin-Windows
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/client ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/src/Client.o: src/Client.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Client.o src/Client.cpp
 
 ${OBJECTDIR}/_ext/1877225195/Pool.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Pool.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
@@ -143,15 +149,15 @@ ${OBJECTDIR}/src/ConditionVariable.o: src/ConditionVariable.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/ConditionVariable.o src/ConditionVariable.cpp
 
-${OBJECTDIR}/_ext/1877225195/Configuration.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Configuration.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp
-
 ${OBJECTDIR}/_ext/1877225195/Queue.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Queue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Queue.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Queue.cpp
+
+${OBJECTDIR}/_ext/1877225195/Configuration.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1877225195/Configuration.o /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp
 
 ${OBJECTDIR}/_ext/1877225195/CommandThread.o: /cygdrive/G/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/CommandThread.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1877225195

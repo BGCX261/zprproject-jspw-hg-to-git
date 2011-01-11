@@ -16,9 +16,6 @@ Terminal::PTerminal Terminal::_pInstance;
 Terminal::Terminal() {
 }
 
-Terminal::Terminal(const Terminal& orig) {
-}
-
 Terminal::~Terminal() {
 }
 

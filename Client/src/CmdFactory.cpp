@@ -6,17 +6,13 @@
  */
 
 #include "CmdFactory.hpp"
-#include <iostream>
+
 CmdFactory::PCmdFactory CmdFactory::_pInstance;
 
 CmdFactory::CmdFactory() {
 }
 
-CmdFactory::CmdFactory(const CmdFactory& orig) {
-}
-
 CmdFactory::~CmdFactory() {
-    
 }
 
 CmdFactory::PCmdFactory CmdFactory::getInstance() {
@@ -42,7 +38,10 @@ bool CmdFactory::registerCmd(const std::string& key, NewCmdFun fun) {
 CmdFactory::Callbacks::const_iterator CmdFactory::find(const std::string& key) {
     Callbacks::const_iterator i = _callbacks.find(key);
     if(i == _callbacks.end())
-        throw new std::exception();
+    {
+        Exception a;
+        throw a;
+    }
     else
         return i;
 }

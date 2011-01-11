@@ -21,7 +21,7 @@ public:
     void createThread(int id);
     void passCmd(int threadId, const Command& cmd);
 
-    ~Pool();
+    virtual ~Pool();
     
 private:
     typedef std::map<int, Thread::PThread> ThreadsSet;

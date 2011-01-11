@@ -9,5 +9,7 @@
 #include "Visitor.hpp"
 
 Command::Command() {
-    
+}
+
+Command::~Command() {
 }

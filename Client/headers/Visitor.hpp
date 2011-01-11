@@ -16,12 +16,12 @@
 
 class Visitor {
 public:
-
-    virtual void handle(const AuthCommand& ) const = 0;
-    virtual void handle(const CreateCommand& ) const = 0;
-    virtual void handle(const DiscCommand& ) const = 0;
-    virtual void handle(const SubsCommand& ) const = 0;
-    virtual void handle(const UsubCommand& ) const = 0;
+    virtual ~Visitor();
+    virtual void handle(const AuthCommand& ) = 0;
+    virtual void handle(const CreateCommand& ) = 0;
+    virtual void handle(const DiscCommand& ) = 0;
+    virtual void handle(const SubsCommand& ) = 0;
+    virtual void handle(const UsubCommand& ) = 0;
 
 protected:
     Visitor();

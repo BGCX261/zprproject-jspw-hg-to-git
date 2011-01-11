@@ -13,3 +13,6 @@ Exception::Exception() {
 Exception::Exception(const Exception& orig) {
 }
 
+Exception::~Exception() {
+}
+
