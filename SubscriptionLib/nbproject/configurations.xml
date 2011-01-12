@@ -10,6 +10,7 @@
       <itemPath>headers/ClientVisitor.hpp</itemPath>
       <itemPath>headers/Exception.hpp</itemPath>
       <itemPath>headers/Id.hpp</itemPath>
+      <itemPath>headers/Messages.hpp</itemPath>
       <itemPath>headers/MsgResponse.hpp</itemPath>
       <itemPath>headers/NewMsgRequest.hpp</itemPath>
       <itemPath>headers/NewMsgResponse.hpp</itemPath>

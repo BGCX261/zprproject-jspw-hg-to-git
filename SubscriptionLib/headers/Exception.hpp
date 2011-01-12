@@ -5,8 +5,8 @@
  * Created on 7 styczeń 2011, 21:07
  */
 
-#ifndef EXCEPTION_HPP
-#define	EXCEPTION_HPP
+#ifndef EXCEPTIONLIB_HPP
+#define	EXCEPTIONLIB_HPP
 
 #include <string>
 #include <exception>
@@ -25,5 +25,5 @@ namespace SubscriptionLib
     };
 }
 
-#endif	/* EXCEPTION_HPP */
+#endif	/* EXCEPTIONLIB_HPP */
 

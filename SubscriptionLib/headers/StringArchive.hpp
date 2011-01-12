@@ -11,6 +11,8 @@
 #include "Archive.hpp"
 #include <list>
 
+#define SIZELENGTH 8
+
 namespace SubscriptionLib
 {
     class StringArchive: public Archive {
@@ -19,13 +21,19 @@ namespace SubscriptionLib
         StringArchive(const std::string& str);
         virtual ~StringArchive();
         virtual std::string getStr() const;
+        virtual int getSizeLength() const;
         virtual Archive& operator<< (const std::string& str);
         virtual Archive& operator>> (std::string& str);
         virtual Archive& operator<< (const int& i);
         virtual Archive& operator>> (int& i);
+
+        
     private:
         std::list<std::string> _strs;
-        std::string _delimiter;
+        static std::string _delimiter;
+        static int _sizeLength;
+        void format(std::string& str) const;
+        void removeEmpty(std::list<std::string>& strs) const;
     };
 }
 

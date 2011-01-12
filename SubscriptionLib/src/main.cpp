@@ -7,6 +7,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <lexical_cast.hpp>
 
 #include "StringArchive.hpp"
 #include "SubsRequest.hpp"
@@ -20,12 +21,15 @@ using namespace SubscriptionLib;
  */
 int main(int argc, char** argv) {
     StringArchive sa;
-    Request* req = new SubsRequest("Pawe  l", "1  1id");
+    Request* req = new SubsRequest("Pawel", "id");
     req->serialize(sa);
     cout << sa.getStr() << endl;
+    std::string sss = "000155";
+    cout << boost::lexical_cast<int>(sss) << std::endl;
     getchar();
     delete req;
-    auto_ptr<Request> ra = Request::deserialize(sa);
+    StringArchive sb(sa.getStr());
+    auto_ptr<Request> ra = Request::deserialize(sb);
     cout << ((ra.get())->getLogin());
     //cout << (ra.get())->getLogin() << endl;
     //SubsRequest* sr = static_cast<SubsRequest*>(ra.get());

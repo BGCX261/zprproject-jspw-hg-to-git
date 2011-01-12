@@ -16,6 +16,7 @@ namespace SubscriptionLib
     public:
         virtual ~Archive();
         virtual std::string getStr() const = 0;
+        virtual int getSizeLength() const = 0;
         virtual Archive& operator<< (const std::string& str) = 0;
         virtual Archive& operator>> (std::string& str) = 0;
         virtual Archive& operator<< (const int& i) = 0;
