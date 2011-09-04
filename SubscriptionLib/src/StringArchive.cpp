@@ -1,14 +1,15 @@
 /* 
  * File:   StringArchive.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy StringArchive
  * Created on 8 styczeń 2011, 16:58
  */
 
-#include <algorithm/string/classification.hpp>
+#include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/join.hpp>
 #include <boost/algorithm/string/split.hpp>
-#include <lexical_cast.hpp>
+#include <boost/lexical_cast.hpp>
 #include <iostream>
 #include "StringArchive.hpp"
 

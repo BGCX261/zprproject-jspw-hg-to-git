@@ -2,6 +2,7 @@
  * File:   ClientVisitor.hpp
  * Author: Pawel
  *
+ * Deklaracja klasy ClientVisitor
  * Created on 11 styczeń 2011, 10:10
  */
 
@@ -16,8 +17,14 @@ namespace SubscriptionLib
     class SubsResponse;
     class UsubResponse;
 
+    /*
+     * Bazowa dla wizytatorow odpowiedzi
+     */
     class ClientVisitor {
     public:
+        /*
+         * Destruktor
+         */
         virtual ~ClientVisitor();
         virtual void handle(const AuthResponse& res) = 0;
         virtual void handle(const MsgResponse& res) = 0;

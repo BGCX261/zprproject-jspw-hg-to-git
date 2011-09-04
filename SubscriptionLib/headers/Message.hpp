@@ -2,6 +2,7 @@
  * File:   Message.hpp
  * Author: Pawel
  *
+ * Deklaracja klasy Message
  * Created on 6 styczeń 2011, 23:57
  */
 
@@ -13,8 +14,14 @@
 
 namespace SubscriptionLib
 {
+    /*
+     * Klsa bazowa dla wiadomosci
+     */
     class Message {
     public:
+        /*
+         * Destruktor
+         */
         virtual ~Message();
     protected:
         Message();

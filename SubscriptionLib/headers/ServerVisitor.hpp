@@ -2,6 +2,7 @@
  * File:   ServerVisitor.hpp
  * Author: Pawel
  *
+ * Deklaracja klasy ServerVisitor
  * Created on 11 styczeń 2011, 10:11
  */
 
@@ -15,8 +16,14 @@ namespace SubscriptionLib
     class SubsRequest;
     class UsubRequest;
 
+    /*
+     * Klasa bazowa dla wizytatorow oblsugujacy zadania
+     */
     class ServerVisitor {
     public:
+        /*
+         * Destruktor
+         */
         virtual ~ServerVisitor();
         virtual void handle(const NewMsgRequest& req) = 0;
         virtual void handle(const AuthRequest& req) = 0;

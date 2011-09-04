@@ -1,7 +1,8 @@
 /* 
  * File:   Message.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy Message
  * Created on 6 styczeń 2011, 23:57
  */
 

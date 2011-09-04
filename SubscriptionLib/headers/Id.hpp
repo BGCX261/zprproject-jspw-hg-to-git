@@ -2,6 +2,7 @@
  * File:   Id.hpp
  * Author: Pawel
  *
+ * Okreslenie id klas wiadomosci
  * Created on 7 styczeń 2011, 20:04
  */
 

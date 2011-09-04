@@ -1,7 +1,8 @@
 /* 
  * File:   NewMsgResponse.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy NewMsgResponse
  * Created on 7 styczeń 2011, 20:20
  */
 

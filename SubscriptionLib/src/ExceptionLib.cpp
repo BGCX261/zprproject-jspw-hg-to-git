@@ -1,11 +1,12 @@
 /* 
- * File:   Exception.cpp
+ * File:   ExceptionLib.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy ExceptionLib
  * Created on 7 styczeń 2011, 21:07
  */
 
-#include "Exception.hpp"
+#include "ExceptionLib.hpp"
 
 namespace SubscriptionLib
 {

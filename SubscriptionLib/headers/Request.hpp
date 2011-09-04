@@ -2,6 +2,7 @@
  * File:   Request.hpp
  * Author: Pawel
  *
+ * Deklaracja klasy Request
  * Created on 6 styczeń 2011, 23:57
  */
 
@@ -14,13 +15,25 @@
 
 namespace SubscriptionLib
 {
+    /*
+     * Klsa bazowa dla zadan
+     */
     class Request: public Message, public Serializeable<Request> {
     public:
         typedef boost::shared_ptr<Request> PRequest;
-
+        /*
+         * Destruktor
+         */
         virtual ~Request();
-
+        /*
+         * Akcpetacja wizytatora serwera
+         * @param visitor Wizytator
+         */
         virtual void accept(ServerVisitor& visitor) const = 0;
+        /*
+         * Pobranie loginu
+         * @return Login
+         */
         std::string getLogin() const;
     protected:
         Request();

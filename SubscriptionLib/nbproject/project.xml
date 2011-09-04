@@ -17,6 +17,7 @@
             <confList>
                 <confElem>Debug</confElem>
                 <confElem>Release</confElem>
+                <confElem>Test</confElem>
             </confList>
         </data>
     </configuration>

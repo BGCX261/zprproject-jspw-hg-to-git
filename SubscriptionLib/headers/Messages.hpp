@@ -2,6 +2,7 @@
  * File:   Messages.hpp
  * Author: Pawel
  *
+ * Zawiera naglowki wiadomosci
  * Created on 11 styczeń 2011, 20:04
  */
 

@@ -1,7 +1,8 @@
 /* 
  * File:   UsubRequest.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy UsubRequest
  * Created on 6 styczeń 2011, 23:58
  */
 

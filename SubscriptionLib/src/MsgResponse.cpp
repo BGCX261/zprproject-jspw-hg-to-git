@@ -1,7 +1,8 @@
 /* 
  * File:   MsgResponse.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy MsgResponse
  * Created on 7 styczeń 2011, 00:02
  */
 

@@ -2,6 +2,7 @@
  * File:   StringArchive.hpp
  * Author: Pawel
  *
+ * Deklaracja klasy StringArchive
  * Created on 8 styczeń 2011, 16:58
  */
 
@@ -15,10 +16,23 @@
 
 namespace SubscriptionLib
 {
+    /*
+     * Archiwum, w ktorym serializacja i deserializacja odbywa sie do ciagu znakow
+     */
     class StringArchive: public Archive {
     public:
+        /*
+         * Konstruktor
+         */
         StringArchive();
+        /*
+         * Konstruktor
+         * @param str Wiadomosc, ktora bedzie deserializowana
+         */
         StringArchive(const std::string& str);
+        /*
+         * Destruktor
+         */
         virtual ~StringArchive();
         virtual std::string getStr() const;
         virtual int getSizeLength() const;

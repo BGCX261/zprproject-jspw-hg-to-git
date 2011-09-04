@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="69">
   <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="f1" displayName="BoostTest" projectFiles="true">
+      <itemPath>test/MessagesTest.hpp</itemPath>
+      <itemPath>test/main.cpp</itemPath>
+    </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true"
@@ -8,7 +12,7 @@
       <itemPath>headers/Archive.hpp</itemPath>
       <itemPath>headers/AuthResponse.hpp</itemPath>
       <itemPath>headers/ClientVisitor.hpp</itemPath>
-      <itemPath>headers/Exception.hpp</itemPath>
+      <itemPath>headers/ExceptionLib.hpp</itemPath>
       <itemPath>headers/Id.hpp</itemPath>
       <itemPath>headers/Messages.hpp</itemPath>
       <itemPath>headers/MsgResponse.hpp</itemPath>
@@ -40,7 +44,7 @@
       <itemPath>src/AuthRequest.cpp</itemPath>
       <itemPath>src/AuthResponse.cpp</itemPath>
       <itemPath>src/ClientVisitor.cpp</itemPath>
-      <itemPath>src/Exception.cpp</itemPath>
+      <itemPath>src/ExceptionLib.cpp</itemPath>
       <itemPath>src/Message.cpp</itemPath>
       <itemPath>src/MsgResponse.cpp</itemPath>
       <itemPath>src/NewMsgRequest.cpp</itemPath>
@@ -111,6 +115,29 @@
         </asmTool>
         <archiverTool>
         </archiverTool>
+      </compileType>
+    </conf>
+    <conf name="Test" type="1">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>Cygwin|Cygwin</compilerSet>
+        <platform>3</platform>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <developmentMode>0</developmentMode>
+          <incDir>
+            <pElem>headers</pElem>
+            <pElem>../../boost</pElem>
+          </incDir>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>../../boost_lib/cygboost_system-mt-1_43.dll</linkerLibFileItem>
+            <linkerLibFileItem>../../boost_lib/cygboost_unit_test_framework-mt-1_43.dll</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
     </conf>
   </confs>

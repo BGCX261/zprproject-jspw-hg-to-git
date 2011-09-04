@@ -1,7 +1,8 @@
 /* 
  * File:   NewMsgRequestr.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy NewMsgRequest
  * Created on 6 styczeń 2011, 23:59
  */
 
@@ -34,11 +35,13 @@ namespace SubscriptionLib
 
     bool NewMsgRequest::doSerialize(Archive& archive) const {
         Request::doSerialize(archive);
+        archive << _subId;
         archive << _info;
     }
 
     bool NewMsgRequest::doDeserialize(Archive& archive) {
         Request::doDeserialize(archive);
+        archive >> _subId;
         archive >> _info;
     }
 

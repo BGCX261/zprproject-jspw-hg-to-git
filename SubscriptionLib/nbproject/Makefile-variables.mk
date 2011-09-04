@@ -22,3 +22,11 @@ CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/libsubscriptionlib.a
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
 CND_PACKAGE_NAME_Release=SubscriptionLib.tar
 CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/SubscriptionLib.tar
+# Test configuration
+CND_PLATFORM_Test=Cygwin-Windows
+CND_ARTIFACT_DIR_Test=dist/Test/Cygwin-Windows
+CND_ARTIFACT_NAME_Test=subscriptionlib
+CND_ARTIFACT_PATH_Test=dist/Test/Cygwin-Windows/subscriptionlib
+CND_PACKAGE_DIR_Test=dist/Test/Cygwin-Windows/package
+CND_PACKAGE_NAME_Test=subscriptionlib.tar
+CND_PACKAGE_PATH_Test=dist/Test/Cygwin-Windows/package/subscriptionlib.tar

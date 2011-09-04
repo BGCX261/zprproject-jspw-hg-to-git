@@ -1,7 +1,8 @@
 /* 
  * File:   Request.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy Request
  * Created on 6 styczeń 2011, 23:57
  */
 

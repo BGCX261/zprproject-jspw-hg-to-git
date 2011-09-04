@@ -2,6 +2,7 @@
  * File:   Serializeable_impl.hpp
  * Author: Pawel
  *
+ * Implementacja funkcji serializujacych
  * Created on 7 styczeń 2011, 20:53
  */
 
@@ -9,8 +10,9 @@
 #define	SERIALIZEABLE_IMPL_HPP
 
 #include "Serializeable.hpp"
-#include "Exception.hpp"
+#include "ExceptionLib.hpp"
 #include <boost/format.hpp>
+#include <iostream>
 #include <string>
 
 namespace SubscriptionLib
@@ -35,7 +37,6 @@ namespace SubscriptionLib
     std::auto_ptr<TType> Serializeable<TType>::deserialize(Archive& archive) {
         Register& creators = getRegister();
         std::string id;
-
         archive >> id;
         typename Register::const_iterator i = creators.find(id);
         if(i == creators.end())

@@ -1,7 +1,8 @@
 /* 
  * File:   UsubResponse.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy UsubResponse
  * Created on 7 styczeń 2011, 00:02
  */
 

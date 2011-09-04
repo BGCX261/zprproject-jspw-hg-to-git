@@ -40,14 +40,15 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Archive.o \
 	${OBJECTDIR}/src/ServerVisitor.o \
 	${OBJECTDIR}/src/NewMsgResponse.o \
+	${OBJECTDIR}/test/main.o \
 	${OBJECTDIR}/src/SubsRequest.o \
 	${OBJECTDIR}/src/AuthRequest.o \
+	${OBJECTDIR}/src/ExceptionLib.o \
 	${OBJECTDIR}/src/UsubRequest.o \
 	${OBJECTDIR}/src/Message.o \
 	${OBJECTDIR}/src/StringArchive.o \
 	${OBJECTDIR}/src/UsubResponse.o \
 	${OBJECTDIR}/src/SubsResponse.o \
-	${OBJECTDIR}/src/Exception.o \
 	${OBJECTDIR}/src/NewMsgRequest.o \
 	${OBJECTDIR}/src/MsgResponse.o
 
@@ -113,6 +114,11 @@ ${OBJECTDIR}/src/NewMsgResponse.o: src/NewMsgResponse.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/NewMsgResponse.o src/NewMsgResponse.cpp
 
+${OBJECTDIR}/test/main.o: test/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/test
+	${RM} $@.d
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/test/main.o test/main.cpp
+
 ${OBJECTDIR}/src/SubsRequest.o: src/SubsRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
@@ -122,6 +128,11 @@ ${OBJECTDIR}/src/AuthRequest.o: src/AuthRequest.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/AuthRequest.o src/AuthRequest.cpp
+
+${OBJECTDIR}/src/ExceptionLib.o: src/ExceptionLib.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/ExceptionLib.o src/ExceptionLib.cpp
 
 ${OBJECTDIR}/src/UsubRequest.o: src/UsubRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -147,11 +158,6 @@ ${OBJECTDIR}/src/SubsResponse.o: src/SubsResponse.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/SubsResponse.o src/SubsResponse.cpp
-
-${OBJECTDIR}/src/Exception.o: src/Exception.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -Isrc -Iheaders -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Exception.o src/Exception.cpp
 
 ${OBJECTDIR}/src/NewMsgRequest.o: src/NewMsgRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

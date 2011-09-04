@@ -1,7 +1,8 @@
 /* 
  * File:   SubsResponse.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy SubsResponse
  * Created on 7 styczeń 2011, 00:02
  */
 

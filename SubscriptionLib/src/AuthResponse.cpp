@@ -1,7 +1,8 @@
 /* 
  * File:   AuthResponse.cpp
  * Author: Pawel
- * 
+ *
+ * Implementacja klasy AuthResponse
  * Created on 7 styczeń 2011, 00:02
  */
 
