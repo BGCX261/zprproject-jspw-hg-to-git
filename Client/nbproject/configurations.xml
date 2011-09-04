@@ -15,8 +15,10 @@
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Configuration.hpp</itemPath>
       <itemPath>headers/CreateCommand.hpp</itemPath>
       <itemPath>headers/DiscCommand.hpp</itemPath>
-      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Exception.hpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/ExceptionClient.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Interpreter.hpp</itemPath>
+      <itemPath>headers/IoService.hpp</itemPath>
+      <itemPath>headers/NewMsgCommand.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Pool.hpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Queue.hpp</itemPath>
       <itemPath>headers/SubsCommand.hpp</itemPath>
@@ -24,6 +26,29 @@
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/headers/Thread.hpp</itemPath>
       <itemPath>headers/UsubCommand.hpp</itemPath>
       <itemPath>headers/Visitor.hpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="headers" displayName="headers" projectFiles="true">
+      <itemPath>../SubscriptionLib/headers/Archive.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/AuthRequest.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/AuthResponse.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/ClientVisitor.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/ExceptionLib.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/Id.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/Message.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/Messages.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/MsgResponse.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/NewMsgRequest.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/NewMsgResponse.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/Request.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/Response.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/Serializeable.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/Serializeable_impl.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/ServerVisitor.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/StringArchive.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/SubsRequest.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/SubsResponse.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/UsubRequest.hpp</itemPath>
+      <itemPath>../SubscriptionLib/headers/UsubResponse.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -44,8 +69,10 @@
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Configuration.cpp</itemPath>
       <itemPath>src/CreateCommand.cpp</itemPath>
       <itemPath>src/DiscCommand.cpp</itemPath>
-      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Exception.cpp</itemPath>
+      <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/ExceptionClient.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Interpreter.cpp</itemPath>
+      <itemPath>src/IoService.cpp</itemPath>
+      <itemPath>src/NewMsgCommand.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Pool.cpp</itemPath>
       <itemPath>G:/Programowanie/ProjektyStudia/ZPR/zprproject-jspw/Client/src/Queue.cpp</itemPath>
       <itemPath>src/SubsCommand.cpp</itemPath>
@@ -54,6 +81,25 @@
       <itemPath>src/UsubCommand.cpp</itemPath>
       <itemPath>src/Visitor.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="src" displayName="src" projectFiles="true">
+      <itemPath>../SubscriptionLib/src/Archive.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/AuthRequest.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/AuthResponse.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/ClientVisitor.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/ExceptionLib.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/Message.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/MsgResponse.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/NewMsgRequest.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/NewMsgResponse.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/Request.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/Response.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/ServerVisitor.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/StringArchive.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/SubsRequest.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/SubsResponse.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/UsubRequest.cpp</itemPath>
+      <itemPath>../SubscriptionLib/src/UsubResponse.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -81,6 +127,7 @@
             <pElem>headers</pElem>
             <pElem>src</pElem>
             <pElem>../../boost</pElem>
+            <pElem>.</pElem>
             <pElem>../SubscriptionLib/headers</pElem>
           </incDir>
         </ccTool>
@@ -90,7 +137,6 @@
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibFileItem>../../boost_lib/cygboost_thread-mt-1_43.dll</linkerLibFileItem>
-            <linkerLibFileItem>../SubscriptionLib/dist/Debug/Cygwin-Windows/libsubscriptionlib.a</linkerLibFileItem>
             <linkerLibFileItem>../../boost_lib/cygboost_unit_test_framework-mt-1_43.dll</linkerLibFileItem>
             <linkerLibFileItem>../../boost_lib/cygboost_system-mt-1_43.dll</linkerLibFileItem>
           </linkerLibItems>

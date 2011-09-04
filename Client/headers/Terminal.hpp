@@ -2,6 +2,7 @@
  * File:   Terminal.hpp
  * Author: Pawel
  *
+ * Deklaracja klasy Terminal
  * Created on 27 listopad 2010, 20:43
  */
 
@@ -10,27 +11,59 @@
 
 #include <boost/shared_ptr.hpp>
 #include <boost/thread/mutex.hpp>
+#include <boost/format.hpp>
 #include <string>
 #include "Command.hpp"
 
-class Terminal {
-public:
-    typedef boost::shared_ptr<Terminal> PTerminal;
+namespace Client
+{
+    /*
+     * Odpowiedzialna za czytanie/wyswietlanie danych z terminala
+     * Singleton
+     */
+    class Terminal {
+    public:
+        typedef boost::shared_ptr<Terminal> PTerminal;
 
-    static PTerminal getInstance();
-    virtual ~Terminal();
-    
-    Command::PCommand readCmd();
-    std::string read();
-    void write(const std::string& str);
+        /*
+         * Pobranie instancji
+         * @return Instacja
+         */
+        static PTerminal getInstance();
+        /*
+         * Destruktor
+         */
+        virtual ~Terminal();
 
-private:
-    static PTerminal _pInstance;
+        /*
+         * Synchroniczne pobranie wiadomosci z konsoli
+         * @return Pobrana wiadomosc
+         */
+        Command::PCommand readCmd();
+        /*
+         * Synchroniczne czytanie wprowadzoanych danych
+         * @return Wprowadzone dane
+         */
+        std::string read();
+        /*
+         * Pisanie danych na konsole
+         * @param str Dane do pisania
+         */
+        void write(const std::string& str);
+        /*
+         * Pisanie danych na konsole
+         * @param format Dane do pisania
+         */
+        void write(const boost::format& format);
 
-    Terminal();
+    private:
+        static PTerminal _pInstance;
 
-    boost::mutex _mutex;
-};
+        Terminal();
+
+        boost::mutex _mutex;
+    };
+}
 
 #endif	/* TERMINAL_HPP */
 

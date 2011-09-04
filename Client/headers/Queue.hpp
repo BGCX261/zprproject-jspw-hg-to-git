@@ -2,6 +2,7 @@
  * File:   Queue.hpp
  * Author: Pawel
  *
+ * Zawiera deklaracje klasy Queue
  * Created on 30 listopad 2010, 16:55
  */
 
@@ -16,31 +17,73 @@
 #include <boost/shared_ptr.hpp>
 #include <queue>
 
-class Queue: public Visitor {
-public:
-    Queue();
-    Queue(ConditionVariable::PCondVar generalCondVar);
-    virtual ~Queue();
+namespace Client
+{
+    /*
+     * Kolejka wiadomosci miedzy watkiem klienta a watkiem glownym aplikacji
+     */
+    class Queue: public Visitor {
+    public:
+        /*
+         * Konstruktor
+         */
+        Queue();
+        /*
+         * Konstruktor
+         * @param generalCondVar Zmienna warunkowa, ktora bedzie informowana, gdy zostanie wstawiona nowa wiadomosc
+         */
+        Queue(ConditionVariable::PCondVar generalCondVar);
+        /*
+         * Destruktor
+         */
+        virtual ~Queue();
+        /*
+         * Wstawienie komendy do kolejki
+         * @param cmd Wstawiana komenda
+         */
+        void push(const Command& cmd);
+        /*
+         * Sprawdzenie czy kolejka jest pusta
+         * @return Okresla czy kolejka jest pusta
+         */
+        bool empty() const;
+        /*
+         * Pobranie komendy z kolejki
+         * @param pCmd W przypadku udanego pobrania wskazuje na pobrana komende
+         * @return Okredla czy pobranie wiadomosci sie udalo
+         */
+        bool tryPop(Command::PCommand& pCmd);
+        /*
+         * Ustawienie nowej zmiennej warunkowej
+         * @param var Ustawiana zmienna warunkowa
+         */
+        void setCondVar(ConditionVariable::PCondVar var);
+        /*
+         * Okreslenie czy watek istnieje
+         * @return Okresla czy watek istnieje
+         */
+        bool exists() const;
 
-    void push(const Command& cmd);
-    bool empty() const;
-    bool tryPop(Command::PCommand pCmd);
-    void setCondVar(ConditionVariable::PCondVar var);
-    //void pop(Command& cmd);
+        /*
+         * Ustawienie nowej wartosci dla zmiennej okreslajacej czy watek istnieje
+         * @param exist Okresla czy watek istnieje
+         */
+        void setExists(bool exists);
 
-    virtual void handle(const AuthCommand& );
-    virtual void handle(const CreateCommand& );
-    virtual void handle(const DiscCommand& );
-    virtual void handle(const SubsCommand& );
-    virtual void handle(const UsubCommand& );
-    
-private:
+        virtual void handle(const AuthCommand& );
+        virtual void handle(const CreateCommand& );
+        virtual void handle(const DiscCommand& );
+        virtual void handle(const SubsCommand& );
+        virtual void handle(const UsubCommand& );
+        virtual void handle(const NewMsgCommand& );
 
-    mutable std::queue<Command::PCommand> _queue;
-    mutable boost::mutex _mutex;
-    //boost::condition_variable _condVar;
-    ConditionVariable::PCondVar _generalCondVar;
-};
+    private:
+        bool _existing;
+        mutable std::queue<Command::PCommand> _queue;
+        mutable boost::mutex _mutex;
+        ConditionVariable::PCondVar _generalCondVar;
+    };
+}
 
 #endif	/* QUEUE_HPP */
 

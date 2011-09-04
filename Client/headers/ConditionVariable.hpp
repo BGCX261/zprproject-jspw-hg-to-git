@@ -2,6 +2,7 @@
  * File:   ConditionVariable.hpp
  * Author: Pawel
  *
+ * Deklaracja klasy ConditionVariable
  * Created on 1 grudzień 2010, 16:41
  */
 
@@ -12,20 +13,37 @@
 #include <boost/shared_ptr.hpp>
 #include <vector>
 
-class ConditionVariable {
-public:
-    typedef boost::shared_ptr<ConditionVariable> PCondVar;
+namespace Client
+{
+    /*
+     * Proxy do zmiennej warunkowej
+     */
+    class ConditionVariable {
+    public:
+        typedef boost::shared_ptr<ConditionVariable> PCondVar;
 
-    ConditionVariable();
-    virtual ~ConditionVariable();
+        /*
+         * Konstruktor
+         */
+        ConditionVariable();
+        /*
+         * Destruktor
+         */
+        virtual ~ConditionVariable();
 
-    void notify_one();
-    void wait();
-private:
-    boost::condition_variable _condVar;
-    boost::mutex _mutex;
-    //std::vector
-};
+        /*
+         * Powiadomienie jednego watku oczekujacego na zmiennej warunkowej
+         */
+        void notify_one();
+        /*
+         * Oczekiwanie watku na zmiennej warunkowej
+         */
+        void wait();
+    private:
+        boost::condition_variable _condVar;
+        boost::mutex _mutex;
+    };
+}
 
 #endif	/* CONDITIONVARIABLE_HPP */
 
