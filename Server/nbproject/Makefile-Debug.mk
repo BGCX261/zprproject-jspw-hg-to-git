@@ -14,11 +14,11 @@ GREP=grep
 NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=gcc
-CCC=g++
-CXX=g++
+CC=gcc.exe
+CCC=g++.exe
+CXX=g++.exe
 FC=
-AS=as
+AS=as.exe
 
 # Macros
 CND_PLATFORM=Cygwin-Windows
@@ -50,11 +50,17 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=../../boost_lib/cygboost_thread-mt-1_43.dll ../../boost_lib/cygboost_system-mt-1_43.dll ../../boost_lib/cygboost_unit_test_framework-mt-1_43.dll
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-Debug.mk dist/Debug/Cygwin-Windows/server.exe
+
+dist/Debug/Cygwin-Windows/server.exe: ../../boost_lib/cygboost_thread-mt-1_43.dll
+
+dist/Debug/Cygwin-Windows/server.exe: ../../boost_lib/cygboost_system-mt-1_43.dll
+
+dist/Debug/Cygwin-Windows/server.exe: ../../boost_lib/cygboost_unit_test_framework-mt-1_43.dll
 
 dist/Debug/Cygwin-Windows/server.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
@@ -63,7 +69,7 @@ dist/Debug/Cygwin-Windows/server.exe: ${OBJECTFILES}
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../SubscriptionLib/headers -I../../boost -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

@@ -1,19 +1,17 @@
-/* 
- * File:   main.cpp
- * Author: Pawel
- *
- * Created on 14 październik 2010, 19:44
- */
+#include <iostream>
+#include "subscriptions/SubscriptionFactory.h"
+#include "User.h"
+#include <vector>
+#include <list>
+#include "Server.h"
+using namespace server;
 
-#include <cstdlib>
 
-using namespace std;
+int main(int argc, char **argv) {
+	std::cout << "Synchronous TCP asio SERVER" << std::endl;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
-
-    return 0;
+	Server::getInstance()->start();
+	return 0;
 }
+
 

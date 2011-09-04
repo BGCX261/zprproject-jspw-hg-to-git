@@ -38,6 +38,19 @@
         <platform>3</platform>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../SubscriptionLib/headers</pElem>
+            <pElem>../../boost</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>../../boost_lib/cygboost_thread-mt-1_43.dll</linkerLibFileItem>
+            <linkerLibFileItem>../../boost_lib/cygboost_system-mt-1_43.dll</linkerLibFileItem>
+            <linkerLibFileItem>../../boost_lib/cygboost_unit_test_framework-mt-1_43.dll</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
     </conf>
     <conf name="Release" type="1">
